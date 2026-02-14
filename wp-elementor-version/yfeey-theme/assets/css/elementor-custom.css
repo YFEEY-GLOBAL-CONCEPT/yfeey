@@ -1,0 +1,166 @@
+/**
+ * Elementor Custom Overrides
+ * Applied on top of style.css for Elementor-specific adjustments
+ *
+ * @package Yfeey
+ */
+
+/* ==========================================================================
+   ELEMENTOR SECTION RESETS
+   ========================================================================== */
+
+/* Full-width sections in Elementor */
+.elementor-section.elementor-section-full_width {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Remove default Elementor widget gaps if needed */
+.elementor-widget-wrap {
+  padding: 0 !important;
+}
+
+/* Stretch inner sections */
+.elementor-inner-section .elementor-container {
+  max-width: 1280px;
+}
+
+/* ==========================================================================
+   ELEMENTOR HEADING OVERRIDES
+   ========================================================================== */
+
+/* Ensure Elementor headings use the theme font */
+.elementor-heading-title {
+  font-family: "Poppins", sans-serif;
+}
+
+.elementor-widget-heading h1.elementor-heading-title {
+  font-family: "Literata", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.elementor-widget-heading h2.elementor-heading-title {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.elementor-widget-heading h3.elementor-heading-title {
+  font-family: "Literata", Georgia, serif;
+  letter-spacing: -0.025em;
+}
+
+/* ==========================================================================
+   ELEMENTOR TEXT EDITOR
+   ========================================================================== */
+.elementor-widget-text-editor {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   ELEMENTOR ICON BOX — Styled as Bento Cards
+   ========================================================================== */
+.elementor-widget-icon-box.yfeey-bento .elementor-icon-box-wrapper {
+  background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.elementor-widget-icon-box.yfeey-bento .elementor-icon-box-wrapper:hover {
+  background: #8062c0;
+  border-color: #8062c0;
+  transform: translateY(-8px);
+}
+
+.elementor-widget-icon-box.yfeey-bento:hover .elementor-icon-box-title,
+.elementor-widget-icon-box.yfeey-bento:hover .elementor-icon-box-description {
+  color: #ffffff !important;
+}
+
+.elementor-widget-icon-box.yfeey-bento:hover .elementor-icon {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ==========================================================================
+   ELEMENTOR BUTTON — Theme Styles
+   ========================================================================== */
+.elementor-widget-button .elementor-button.yfeey-btn-primary {
+  background-color: #8062c0;
+  border-radius: 9999px;
+  padding: 1.25rem 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  box-shadow: 0 25px 50px -12px rgba(128, 98, 192, 0.3);
+  transition: all 0.3s ease;
+}
+
+.elementor-widget-button .elementor-button.yfeey-btn-primary:hover {
+  background-color: #694fa0;
+}
+
+.elementor-widget-button .elementor-button.yfeey-btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 1.25rem 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+}
+
+.elementor-widget-button .elementor-button.yfeey-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   ELEMENTOR IMAGE BOX — Works Cards
+   ========================================================================== */
+.elementor-widget-image-box.yfeey-work-card {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+/* ==========================================================================
+   DARK SECTION STYLES
+   ========================================================================== */
+.elementor-section.yfeey-dark {
+  background-color: #0e1118 !important;
+}
+
+.elementor-section.yfeey-dark .elementor-heading-title,
+.elementor-section.yfeey-dark h1,
+.elementor-section.yfeey-dark h2,
+.elementor-section.yfeey-dark h3 {
+  color: #ffffff;
+}
+
+.elementor-section.yfeey-dark p {
+  color: #9ca3af;
+}
+
+/* ==========================================================================
+   SCROLL ANIMATION SUPPORT
+   ========================================================================== */
+.elementor-invisible {
+  visibility: visible !important;
+}
+
+/* Smooth reveal for Elementor entrance animations */
+.elementor-widget {
+  transition: all 0.3s ease;
+}
