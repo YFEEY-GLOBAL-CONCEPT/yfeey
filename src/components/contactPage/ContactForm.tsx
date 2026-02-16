@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 
 const ContactForm = () => {
@@ -21,7 +21,7 @@ const ContactForm = () => {
 
             <div className="space-y-8">
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center text-primary">
                   <Mail size={24} />
                 </div>
                 <div>
@@ -33,7 +33,7 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center text-primary">
                   <Phone size={24} />
                 </div>
                 <div>
@@ -45,7 +45,7 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center text-primary">
                   <MapPin size={24} />
                 </div>
                 <div>
@@ -61,11 +61,11 @@ const ContactForm = () => {
           </div>
 
           {/* Form */}
-          <div className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-3xl backdrop-blur-xl relative">
+          <div className="bg-white/5 border border-white/10 p-10 md:p-16 backdrop-blur-xl relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -z-10 rounded-full"></div>
 
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-gray-400">
                     Full Name
@@ -73,7 +73,7 @@ const ContactForm = () => {
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-primary/50 transition-colors"
+                    className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-primary/50 transition-colors"
                   />
                 </div>
                 <div className="space-y-2">
@@ -83,7 +83,7 @@ const ContactForm = () => {
                   <input
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-primary/50 transition-colors"
+                    className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-primary/50 transition-colors"
                   />
                 </div>
               </div>
@@ -92,12 +92,36 @@ const ContactForm = () => {
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-400">
                   Subject
                 </label>
-                <select className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-primary/50 transition-colors appearance-none">
-                  <option>AI Automation Inquiry</option>
-                  <option>Custom Software Project</option>
-                  <option>Branding & Visual Systems</option>
-                  <option>General Inquiry</option>
-                </select>
+                <div className="relative">
+                  <select className="w-full bg-white/5 border border-white/10 p-4 pr-12 text-white outline-none focus:border-primary/50 transition-colors appearance-none cursor-pointer">
+                    <option className="bg-deep-midnight text-white">
+                      AI Automation Inquiry
+                    </option>
+                    <option className="bg-deep-midnight text-white">
+                      Custom Software Project
+                    </option>
+                    <option className="bg-deep-midnight text-white">
+                      Branding & Visual Systems
+                    </option>
+                    <option className="bg-deep-midnight text-white">
+                      General Inquiry
+                    </option>
+                  </select>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-2">
@@ -107,16 +131,15 @@ const ContactForm = () => {
                 <textarea
                   rows={5}
                   placeholder="Tell us about your project..."
-                  className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-primary/50 transition-colors resize-none"
+                  className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-primary/50 transition-colors resize-none"
                 ></textarea>
               </div>
 
               <Button
-                size="lg"
-                className="w-full rounded-xl flex items-center justify-center gap-3"
+                withArrow
+                className="w-full flex items-center justify-center gap-3"
               >
                 Send Message
-                <Send size={18} />
               </Button>
             </form>
           </div>

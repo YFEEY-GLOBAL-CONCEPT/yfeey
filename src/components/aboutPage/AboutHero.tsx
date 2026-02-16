@@ -3,12 +3,15 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import AuroraBackground from "@/components/ui/AuroraBackground";
+import Image from "next/image";
 
 const AboutHero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const badgeRef = useRef<HTMLSpanElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -37,6 +40,15 @@ const AboutHero = () => {
             duration: 1,
           },
           "-=0.8",
+        )
+        .from(
+          imageRef.current,
+          {
+            opacity: 0,
+            scale: 1.05,
+            duration: 1.5,
+          },
+          "-=1",
         );
     },
     { scope: containerRef },
@@ -45,34 +57,47 @@ const AboutHero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[80vh] flex items-center justify-center bg-deep-midnight overflow-hidden pt-20"
+      className="relative flex items-center bg-white overflow-hidden "
     >
-      {/* Background Morphing Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[40rem] hero-glow rounded-[100%] opacity-30"></div>
-      </div>
+      <AuroraBackground variant="light" />
 
-      <div className="container mx-auto px-6 relative z-10 text-center">
-        <span
-          ref={badgeRef}
-          className="text-badge text-primary mb-8 inline-block"
-        >
-          Established MMXXIV
-        </span>
-        <h1
-          ref={titleRef}
-          className="text-white tracking-tight max-w-5xl mx-auto leading-[1.1]"
-        >
-          A Studio Built on{" "}
-          <span className="italic font-light">Structure.</span>
-        </h1>
-        <p
-          ref={subtitleRef}
-          className="text-gray-400 mt-10 max-w-2xl mx-auto leading-relaxed text-body-large"
-        >
-          We specialize in the architectural refinement of digital systems,
-          ensuring that growth is not just expected, but engineered.
-        </p>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div className="flex-1 text-center lg:text-left">
+            <h1
+              ref={titleRef}
+              className="text-gray-900 mb-6"
+            >
+              Building the Next <br /> Era of{" "}
+              <span className=" text-primary">
+                Digital Systems.
+              </span>
+            </h1>
+            <p
+              ref={subtitleRef}
+              className="text-gray-600 max-w-xl lg:mx-0 mx-auto"
+            >
+              Yfeey is an architectural refinement studio. We engineer systems
+              that transform fragmented workflows into clear, scalable digital
+              infrastructure.
+            </p>
+          </div>
+
+          <div
+            ref={imageRef}
+            className="flex-1 relative w-full aspect-square md:aspect-video lg:aspect-square overflow-hidden "
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
+              alt="Modern architectural office interior"
+              fill
+              className="object-cover"
+              priority
+            />
+            {/* Grain Overlay on image */}
+            <div className="absolute inset-0 bg-white/5 mix-blend-overlay pointer-events-none"></div>
+          </div>
+        </div>
       </div>
     </section>
   );

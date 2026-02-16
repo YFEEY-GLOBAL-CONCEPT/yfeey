@@ -23,17 +23,13 @@ const WorksHero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative pt-40 pb-20 bg-deep-midnight overflow-hidden"
+      className="relative pb-8 pt-32 bg-deep-midnight overflow-hidden"
     >
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <span className="reveal text-badge text-primary mb-6 inline-block uppercase tracking-widest">
-          Portfolio
-        </span>
-        <h1 className="reveal text-white max-w-4xl mx-auto leading-tight italic">
-          Engineering Impact Through <br />
-          <span className="not-italic font-bold">Intelligent Design.</span>
+        <h1 className="reveal text-white max-w-3xl mx-auto">
+          Engineering Impact Through Intelligent Design.
         </h1>
-        <p className="reveal text-gray-400 mt-8 max-w-2xl mx-auto text-lg leading-relaxed">
+        <p className="reveal text-gray-400 mt-8 max-w-2xl mx-auto text-lg">
           A showcase of our architectural approach to digital refinement, where
           growth is engineered into every system we build.
         </p>

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const CTA = () => {
   return (
-    <section className="py-36 relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-white">
       <div className="absolute inset-0 bg-dot-matrix opacity-10 pointer-events-none"></div>
       <div className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
         <h1 className=" text-text-main mb-4 uppercase">

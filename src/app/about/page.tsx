@@ -1,6 +1,4 @@
-import React from "react";
-import Navbar from "@/components/globalComp/Navbar";
-import Footer from "@/components/globalComp/Footer";
+
 import AboutHero from "@/components/aboutPage/AboutHero";
 import AboutNarrative from "@/components/aboutPage/AboutNarrative";
 import AboutValues from "@/components/aboutPage/AboutValues";
@@ -22,8 +20,6 @@ const AboutPage = () => {
       <AboutValues />
       <AboutMethodology />
       <AboutTrust />
-      <AboutCTA />
-  
     </main>
   );
 };

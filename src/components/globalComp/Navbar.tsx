@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const navItems = [
   { name: "About", href: "/about" },
   { name: "Works", href: "/works" },
-  { name: "Blogs", href: "#" },
+  { name: "Blogs", href: "/blogs" },
 ];
 
 const services = [
@@ -31,30 +31,39 @@ const Navbar = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
-
-  // Lock scroll when mobile menu is open
+  /* ---------------- SCROLL LOCK ---------------- */
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileMenuOpen]);
 
+  /* ---------------- GSAP ---------------- */
   useGSAP(
     () => {
-      // Scroll animation
-      gsap.to(headerRef.current, {
-        backgroundColor: "rgba(14, 17, 24, 0.95)",
-        height: "72px",
-        scrollTrigger: {
-          start: "top -20px",
-          toggleActions: "play none none reverse",
-        },
+      // Scroll-based header transform
+      ScrollTrigger.create({
+        start: "top -20",
+        onEnter: () =>
+          gsap.to(headerRef.current, {
+            backgroundColor: "rgba(14, 17, 24, 0.95)",
+            height: 72,
+            duration: 0.3,
+            ease: "power2.out",
+          }),
+        onLeaveBack: () =>
+          gsap.to(headerRef.current, {
+            backgroundColor: "transparent",
+            height: 80,
+            duration: 0.3,
+            ease: "power2.out",
+          }),
       });
 
       // Entrance animation
@@ -73,18 +82,16 @@ const Navbar = () => {
 
   return (
     <>
+      {/* ================= HEADER ================= */}
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 glass-nav h-20 flex items-center transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center transition-all duration-300 backdrop-blur-md"
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group nav-reveal">
-            <div className="text-white flex group-hover:scale-110 transition-transform duration-300">
-              <Hexagon className="w-8 h-8 fill-primary stroke-primary" />
-            </div>
-            <span className="font-display text-card-title text-white">
-              Yfeey
-            </span>
+            <Hexagon className="w-8 h-8 fill-primary stroke-primary group-hover:scale-110 transition-transform duration-300" />
+            <span className="font-display text-white text-lg">Yfeey</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -93,7 +100,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-semibold transition-colors font-display nav-reveal ${
+                className={`text-sm font-semibold font-display nav-reveal transition-colors ${
                   isActive(item.href)
                     ? "text-white"
                     : "text-gray-400 hover:text-white"
@@ -103,18 +110,20 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <div className="relative services-dropdown group nav-reveal">
+            {/* Services Dropdown */}
+            <div className="relative group nav-reveal">
               <button className="text-sm font-semibold text-gray-400 hover:text-white transition-colors font-display flex items-center gap-1">
                 Services
-                <ChevronDown className="w-4 h-4 opacity-70 group-hover:rotate-180 transition-transform" />
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
-              <div className="dropdown-content group-hover:block animate-in fade-in slide-in-from-top-2 duration-300">
-                <div className="flex flex-col gap-1">
+
+              <div className="absolute top-full left-0  hidden group-hover:block">
+                <div className="bg-deep-midnight border mt-6 border-white/5 shadow-xl py-2 w-64">
                   {services.map((service) => (
                     <Link
                       key={service}
                       href="/#services"
-                      className="text-xs px-4 py-3 dark-link-hover rounded-lg text-gray-300 font-medium transition-colors"
+                      className="block text-xs px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white transition-colors"
                     >
                       {service}
                     </Link>
@@ -124,15 +133,16 @@ const Navbar = () => {
             </div>
           </nav>
 
-          {/* CTA & Mobile Toggle */}
+          {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-4 nav-reveal">
             <Button
               href="/contact"
               size="sm"
-              className="hidden md:flex rounded-full"
+              className="hidden md:flex "
             >
               Contact Us
             </Button>
+
             <button
               className="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(true)}
@@ -144,13 +154,14 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Drawer */}
+      {/* ================= MOBILE MENU ================= */}
       <div
-        className={`fixed inset-0 z-[60] bg-deep-midnight transition-transform duration-500 ease-in-out md:hidden ${
+        className={`fixed inset-0 z-60 bg-deep-midnight transition-transform duration-500 ease-in-out md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full">
+          {/* Top Bar */}
           <div className="flex items-center justify-between p-6 border-b border-white/5">
             <Link href="/" className="flex items-center gap-3">
               <Hexagon className="w-8 h-8 fill-primary stroke-primary" />
@@ -158,26 +169,30 @@ const Navbar = () => {
                 Yfeey
               </span>
             </Link>
+
             <button
-              className="text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(false)}
+              className="text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
               aria-label="Close menu"
             >
               <X className="w-6 h-6" />
             </button>
           </div>
 
-          <nav className="flex-1 overflow-y-auto p-8 space-y-8">
-            <div className="space-y-4">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
+          {/* Navigation */}
+          <nav className="flex-1 overflow-y-auto p-8 space-y-10">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold mb-4">
                 Navigation
               </p>
-              <ul className="space-y-4">
+
+              <ul className="space-y-5">
                 {navItems.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className={`text-2xl font-display font-medium block ${
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`text-2xl font-display block ${
                         isActive(item.href) ? "text-primary" : "text-white"
                       }`}
                     >
@@ -188,21 +203,23 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <div className="space-y-4 pt-8 border-t border-white/5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
+            <div className="pt-8 border-t border-white/5">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold mb-4">
                 Services
               </p>
+
               <ul className="space-y-4">
                 {services.map((service) => (
                   <li key={service}>
                     <Link
                       href="/#services"
-                      className="text-lg text-white/70 hover:text-white transition-colors flex items-center justify-between group"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center justify-between text-white/70 hover:text-white transition-colors group"
                     >
                       {service}
                       <ArrowRight
                         size={16}
-                        className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all"
+                        className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
                       />
                     </Link>
                   </li>
@@ -211,8 +228,14 @@ const Navbar = () => {
             </div>
           </nav>
 
+          {/* Bottom CTA */}
           <div className="p-8 border-t border-white/5">
-            <Button href="/contact" size="lg" className="w-full rounded-2xl">
+            <Button
+              href="/contact"
+              size="lg"
+              className=""
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Get Started
             </Button>
           </div>

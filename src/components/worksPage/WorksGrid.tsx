@@ -61,9 +61,9 @@ const WorksGrid = () => {
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${
+              className={`px-6 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${
                 activeFilter === cat
-                  ? "bg-primary border-primary text-white shadow-lg shadow-primary/20"
+                  ? "bg-primary border-primary text-white "
                   : "bg-white/5 border-white/10 text-gray-400 hover:border-white/20"
               }`}
             >
@@ -74,10 +74,10 @@ const WorksGrid = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, idx) => (
+          {filteredProjects.map((project, i) => (
             <div
-              key={project.title}
-              className="group relative flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-500"
+              key={i}
+              className="group relative flex flex-col bg-white/5 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500"
             >
               <div className="relative h-64 overflow-hidden">
                 <Image

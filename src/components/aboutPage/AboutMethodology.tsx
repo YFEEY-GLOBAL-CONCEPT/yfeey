@@ -28,68 +28,64 @@ const AboutMethodology = () => {
   );
 
   return (
-    <section ref={containerRef} className="py-40 bg-deep-midnight">
-      <div className="container mx-auto px-6 max-w-4xl space-y-32">
+    <section
+      ref={containerRef}
+      className=" bg-white"
+    >
+      <div className="container mx-auto px-6  space-y-32">
         {/* Methodology */}
         <div className="methodology-section flex flex-col md:flex-row gap-12 md:gap-24">
           <div className="md:w-1/3">
-            <span className="text-badge text-primary py-1 px-3 border border-primary/20 rounded-full">
-              Methodology
-            </span>
-            <h3 className="mt-6 text-white">How We Work</h3>
+            <h2 className=" text-gray-900">
+              Our Structural Approach
+            </h2>
           </div>
           <div className="md:w-2/3">
-            <p className="font-serif-brand text-xl text-gray-400 leading-relaxed italic">
+            <p className="font-serif-brand text-xl md:text-2xl text-gray-700">
               {
                 "We approach every project with a diagnostic mindset. We don't start with solutions; we start with the architecture of the problem."
               }
             </p>
-            <div className="mt-8 space-y-6">
+            <div className="mt-12 space-y-10 relative">
+              {/* Vertical connecting line */}
+              <div className="absolute left-4 top-4 bottom-4 w-px bg-gray-100 md:hidden lg:block"></div>
+
               {[
-                { num: "01", title: "Systemic Audit" },
-                { num: "02", title: "Structural Blueprinting" },
-                { num: "03", title: "Iterative Execution" },
+                {
+                  num: "01",
+                  title: "Systemic Audit",
+                  desc: "A deep dive into existing workflows to identify fragmented processes and technical debt.",
+                },
+                {
+                  num: "02",
+                  title: "Structural Blueprinting",
+                  desc: "Designing the logical framework that will govern your digital operations.",
+                },
+                {
+                  num: "03",
+                  title: "Iterative Execution",
+                  desc: "Phased deployment of systems with continuous refinement and scalability testing.",
+                },
               ].map((step) => (
-                <div key={step.num} className="flex items-start gap-4">
-                  <span className="font-display font-bold text-primary">
-                    {step.num}
-                  </span>
-                  <p className="font-display text-sm uppercase tracking-wider font-semibold text-white/90">
-                    {step.title}
-                  </p>
+                <div
+                  key={step.num}
+                  className="relative flex flex-col md:flex-row items-start gap-8 group"
+                >
+                  <div className="w-8 h-8 bg-white border-2 border-primary flex items-center justify-center z-10 group-hover:bg-primary transition-colors duration-300">
+                    <span className="font-display text-[10px] font-bold text-primary group-hover:text-white transition-colors duration-300">
+                      {step.num}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className=" font-medium text-primary mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Engagement */}
-        <div className="methodology-section flex flex-col md:flex-row gap-12 md:gap-24">
-          <div className="md:w-1/3">
-            <span className="text-badge text-primary py-1 px-3 border border-primary/20 rounded-full">
-              Engagement
-            </span>
-            <h3 className="mt-6 text-white">The Kind of Work We Do</h3>
-          </div>
-          <div className="md:w-2/3">
-            <p className="font-serif-brand text-xl text-gray-400 leading-relaxed italic">
-              We thrive in complexity. From bespoke automation engines to
-              multi-layered brand systems, we build foundations for ambitious
-              companies.
-            </p>
-            <div className="mt-10 grid grid-cols-2 gap-8">
-              <div className="border-l-2 border-white/10 pl-6">
-                <p className="text-badge text-gray-500 mb-2">Focus A</p>
-                <p className="font-display text-sm font-bold text-white">
-                  Enterprise Automation
-                </p>
-              </div>
-              <div className="border-l-2 border-white/10 pl-6">
-                <p className="text-badge text-gray-500 mb-2">Focus B</p>
-                <p className="font-display text-sm font-bold text-white">
-                  Structural Branding
-                </p>
-              </div>
             </div>
           </div>
         </div>

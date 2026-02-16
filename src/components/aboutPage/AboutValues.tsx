@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Eye,
@@ -9,48 +11,51 @@ import {
 const valueItems = [
   {
     title: "Clarity",
-    desc: "Eliminating noise to reveal the core purpose of every digital interaction.",
+    desc: "Eliminating digital noise to reveal the core purpose of every interaction and system.",
     icon: Eye,
   },
   {
     title: "Longevity",
-    desc: "Engineering solutions that withstand the rapid decay of digital trends.",
+    desc: "Engineering solutions designed to withstand the rapid evolution of digital trends.",
     icon: Hourglass,
   },
   {
     title: "Structure",
-    desc: "A rigid adherence to logical systems and architectural excellence.",
+    desc: "A rigid adherence to logical systems, architectural excellence, and clean code.",
     icon: Network,
   },
   {
     title: "Partnership",
-    desc: "Working as an extension of your team to ensure mutual transformation.",
+    desc: "Acting as a strategic extension of your team to ensure long-term structural success.",
     icon: HandshakeIcon,
   },
 ];
 
 const AboutValues = () => {
   return (
-    <section className="py-32 bg-deep-midnight/50">
+    <section className="bg-white">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-16">
-          <h4 className="text-primary mb-4">Our Values</h4>
-          <h2 className="text-white">Anchoring our creative output.</h2>
+        <div className="max-w-3xl mb-20">
+          <h5 className="text-primary mb-4">Our Values</h5>
+          <h2 className="text-gray-900 max-w-xl">
+            Anchoring our creative output in discipline.
+          </h2>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {valueItems.map((item, index) => {
+          {valueItems.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.title}
-                className="p-8 border border-white/10 bg-white/5 rounded-2xl hover:border-white/20 transition-all duration-500"
+                className="flex flex-col gap-8 p-12 bg-primary border-l-2 border-white/10 group hover:-translate-y-2 transition-all duration-500"
               >
-                <Icon className="w-10 h-10 text-primary mb-12" />
+                <div className="flex items-center justify-end">
+                  <Icon className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
+                </div>
                 <div>
-                  <h3 className="text-white mb-4 uppercase tracking-widest text-lg">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed transition-colors">
+                  <h3 className="text-white mb-4">{item.title}</h3>
+                  <p className="text-white/80">
                     {item.desc}
                   </p>
                 </div>

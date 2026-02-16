@@ -1,6 +1,4 @@
-import React from "react";
-import Navbar from "@/components/globalComp/Navbar";
-import Footer from "@/components/globalComp/Footer";
+
 import ContactHero from "@/components/contactPage/ContactHero";
 import ContactForm from "@/components/contactPage/ContactForm";
 
@@ -13,10 +11,8 @@ export const metadata = {
 const ContactPage = () => {
   return (
     <main className="min-h-screen bg-deep-midnight">
-      <Navbar />
       <ContactHero />
       <ContactForm />
-      <Footer />
     </main>
   );
 };

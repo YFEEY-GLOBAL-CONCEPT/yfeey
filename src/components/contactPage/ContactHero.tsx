@@ -26,14 +26,11 @@ const ContactHero = () => {
       className="relative pt-40 pb-20 bg-deep-midnight overflow-hidden"
     >
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <span className="reveal text-badge text-primary mb-6 inline-block uppercase tracking-widest">
-          Get In Touch
-        </span>
-        <h1 className="reveal text-white max-w-4xl mx-auto leading-tight italic">
-          Let’s Build the <br />
-          <span className="not-italic font-bold">Systems of Tomorrow.</span>
+  
+        <h1 className="reveal text-white max-w-4xl mx-auto">
+          Let’s Build the Systems of Tomorrow.
         </h1>
-        <p className="reveal text-gray-400 mt-8 max-w-2xl mx-auto text-lg leading-relaxed">
+        <p className="reveal text-gray-400 mt-8 max-w-2xl mx-auto text-lg">
           Whether you have a specific project in mind or just want to explore
           possibilities, we’re ready to help you engineer significant impact.
         </p>
