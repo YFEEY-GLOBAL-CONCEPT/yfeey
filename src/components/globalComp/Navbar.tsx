@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const navItems = [
   { name: "About", href: "/about" },
   { name: "Works", href: "/works" },
-  { name: "Blogs", href: "/blogs" },
+  { name: "Blog", href: "/blog" },
 ];
 
 const services = [
@@ -135,11 +135,7 @@ const Navbar = () => {
 
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-4 nav-reveal">
-            <Button
-              href="/contact"
-              size="sm"
-              className="hidden md:flex "
-            >
+            <Button href="/contact" size="sm" className="hidden md:flex ">
               Contact Us
             </Button>
 

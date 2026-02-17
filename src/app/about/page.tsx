@@ -20,6 +20,7 @@ const AboutPage = () => {
       <AboutValues />
       <AboutMethodology />
       <AboutTrust />
+      <AboutCTA />
     </main>
   );
 };

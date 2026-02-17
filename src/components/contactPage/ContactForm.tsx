@@ -6,8 +6,8 @@ import { Button } from "../ui/button";
 
 const ContactForm = () => {
   return (
-    <section className="py-24 bg-deep-midnight relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+    <section className="bg-deep-midnight relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-20">
           {/* Contact Info */}
           <div className="space-y-12">
@@ -61,7 +61,7 @@ const ContactForm = () => {
           </div>
 
           {/* Form */}
-          <div className="bg-white/5 border border-white/10 p-10 md:p-16 backdrop-blur-xl relative">
+          <div className="bg-white/5 border border-white/10 p-6 md:p-16 backdrop-blur-xl relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -z-10 rounded-full"></div>
 
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>

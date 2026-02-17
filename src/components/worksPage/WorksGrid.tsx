@@ -54,7 +54,7 @@ const WorksGrid = () => {
 
   return (
     <section className="py-24 bg-deep-midnight">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto max-w-7xl">
         {/* Filters */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
           {categories.map((cat) => (

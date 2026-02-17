@@ -34,7 +34,7 @@ const valueItems = [
 const AboutValues = () => {
   return (
     <section className="bg-white">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto">
         <div className="max-w-3xl mb-20">
           <h5 className="text-primary mb-4">Our Values</h5>
           <h2 className="text-gray-900 max-w-xl">

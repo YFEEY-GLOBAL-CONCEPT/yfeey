@@ -7,7 +7,7 @@ const AboutNarrative = () => {
   return (
     <section className="relative bg-deep-midnight overflow-hidden">
       <AuroraBackground variant="dark" />
-      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
           <div className="lg:col-span-12 xl:col-span-5 flex flex-col gap-8">
             <h2 className="text-white">

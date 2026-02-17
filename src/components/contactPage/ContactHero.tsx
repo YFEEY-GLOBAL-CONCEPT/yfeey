@@ -23,9 +23,9 @@ const ContactHero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative pt-40 pb-20 bg-deep-midnight overflow-hidden"
+      className="relative pt-40 bg-deep-midnight overflow-hidden"
     >
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="container mx-auto relative z-10 text-center">
   
         <h1 className="reveal text-white max-w-4xl mx-auto">
           Let’s Build the Systems of Tomorrow.

@@ -25,7 +25,7 @@ const WorksHero = () => {
       ref={containerRef}
       className="relative pb-8 pt-32 bg-deep-midnight overflow-hidden"
     >
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="container mx-auto relative z-10 text-center">
         <h1 className="reveal text-white max-w-3xl mx-auto">
           Engineering Impact Through Intelligent Design.
         </h1>
