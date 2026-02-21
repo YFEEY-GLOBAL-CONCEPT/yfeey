@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="mx-auto w-full relative z-20 flex items-start flex-col lg:flex-row">
         <div className="w-full">
           <h1 ref={titleRef} className="mb-8 mt-16 max-w-4xl text-white">
-            We Design Scalable <br /> Digital Systems
+            We Love a Good Challenge.
           </h1>
 
           {/* Subtitle */}
@@ -47,10 +47,7 @@ const Hero = () => {
             ref={subtitleRef}
             className="text-gray-400 max-w-xl leading-relaxed mb-8"
           >
-            Yfeey is a digital agency focused on software, intelligent
-            automation, and AI-driven systems. We help businesses replace
-            fragmented tools and manual processes with technology that is clear,
-            efficient, and built to scale.
+            Transforming Ideas into Scalable Systems. Yfeey empowers startups, businesses, and individuals to maximize efficiency and impact through people, technology, AI, and smart automation.
           </p>
 
           {/* Buttons */}

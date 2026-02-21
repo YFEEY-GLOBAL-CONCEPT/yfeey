@@ -27,7 +27,7 @@ const Footer = () => {
       className="bg-deep-midnight text-white pt-24 pb-12 overflow-hidden"
       id="testimonials"
     >
-      <div className="container mx-auto max-w-7xl relative z-10">
+      <div className="container mx-auto relative z-10">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 mb-20 text-center md:text-left">
           {/* Navigation Links */}

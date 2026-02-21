@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -14,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 const navItems = [
   { name: "About", href: "/about" },
   { name: "Works", href: "/works" },
-  { name: "Blog", href: "/blog" },
+  // { name: "Blog", href: "/blog" },
 ];
 
 const services = [
@@ -89,9 +90,9 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group nav-reveal">
-            <Hexagon className="w-8 h-8 fill-primary stroke-primary group-hover:scale-110 transition-transform duration-300" />
-            <span className="font-display text-white text-lg">Yfeey</span>
+          <Link href="/" className="flex items-center group nav-reveal">
+            <Image src='/images/Logo.png' width={60} height={60} alt="logo"/> 
+            <span className="text-primary font-bold"> YFEEY</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -159,11 +160,9 @@ const Navbar = () => {
         <div className="flex flex-col h-full">
           {/* Top Bar */}
           <div className="flex items-center justify-between p-6 border-b border-white/5">
-            <Link href="/" className="flex items-center gap-3">
-              <Hexagon className="w-8 h-8 fill-primary stroke-primary" />
-              <span className="font-display text-lg text-white font-bold">
-                Yfeey
-              </span>
+            <Link href="/" className="flex items-center ">
+              <Image src='/images/Logo.png' width={60} height={60} alt="logo"/> 
+            <span className="text-primary font-bold"> YFEEY</span>
             </Link>
 
             <button

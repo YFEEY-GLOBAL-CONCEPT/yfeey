@@ -15,32 +15,32 @@ import AuroraBackground from "@/components/ui/AuroraBackground";
 const services = [
   {
     title: "AI & Automation",
-    desc: "Implement intelligent agents and neural networks to automate complex workflows and decision-making processes.",
+    desc: "Leverage cutting-edge AI to automate content creation, lead generation, and customer service. Build custom chatbots, streamline workflows, and implement intelligent automation to transform your business operations.",
     icon: Bot,
   },
   {
     title: "Custom Software",
-    desc: "Bespoke applications architected for high performance, tailored specifically to your unique business logic.",
+    desc: "Full websites, mobile apps, and AI-integrated platforms from MVPs to enterprise-scale systems.",
     icon: Terminal,
   },
   {
     title: "Content & Growth",
-    desc: "Data-driven strategies and algorithmic content distribution designed to maximize reach and conversion.",
+    desc: "AI-generated videos, faceless YouTube channels, automated social media, and content built for organic growth, lead generation, and paid advertising.",
     icon: TrendingUp,
   },
   {
     title: "Team Augmentation",
-    desc: "Scale your engineering capacity instantly with our vetted senior developers, designers, and AI specialists.",
+    desc: "Top-tier developers, designers, and technical specialists to augment your team and accelerate project delivery with seamless integration.",
     icon: UserPlus,
   },
   {
     title: "Branding",
-    desc: "Forge a memorable digital identity with cohesive visual systems that resonate with forward-thinking markets.",
+    desc: "Professional logo design, brand guidelines, and marketing materials to build a cohesive visual identity system for your business.",
     icon: Palette,
   },
   {
     title: "Training",
-    desc: "Empower your workforce with workshops on AI adoption, software best practices, and digital transformation.",
+    desc: "Training programs, executive development, and AI workshops designed to bridge the skill gap and empower your team.",
     icon: GraduationCap,
   },
 ];
