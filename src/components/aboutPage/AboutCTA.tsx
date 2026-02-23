@@ -34,7 +34,7 @@ const AboutCTA = () => {
       className=" bg-white relative overflow-hidden flex items-center justify-center font-display"
     >
       <div className="container mx-auto max-w-5xl relative z-10">
-        <div className="cta-content relative bg-gray-900 p-12 md:p-24 overflow-hidden shadow-2xl text-center">
+        <div className="cta-content relative bg-gray-900 md:p-24 overflow-hidden shadow-2xl text-center">
           {/* Concentrated Aurora inside the card */}
           <AuroraBackground className="opacity-40" />
 
