@@ -26,10 +26,10 @@ const WorksHero = () => {
       className="relative pb-8 pt-32 bg-deep-midnight overflow-hidden"
     >
       <div className="container mx-auto relative z-10 text-center">
-        <h1 className="reveal text-white max-w-3xl mx-auto">
+        <h1 className="reveal text-primary mt-16 max-w-3xl mx-auto">
           Engineering Impact Through Intelligent Design.
         </h1>
-        <p className="reveal text-gray-400 mt-8 max-w-2xl mx-auto text-lg">
+        <p className="reveal text-textMain mt-8 max-w-2xl mx-auto text-lg">
           A showcase of our architectural approach to digital refinement, where
           growth is engineered into every system we build.
         </p>
