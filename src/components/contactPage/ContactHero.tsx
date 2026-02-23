@@ -25,7 +25,7 @@ const ContactHero = () => {
       ref={containerRef}
       className="relative pt-32 md:pt-48 pb-12 md:pb-20 bg-deep-midnight overflow-hidden"
     >
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="container mx-auto px-6 md:px-10 max-w-7xl relative z-10 text-center">
   
         <h1 className="reveal text-primary max-w-4xl mx-auto text-4xl md:text-5xl lg:text-7xl">
           Let’s Build the Systems of Tomorrow.

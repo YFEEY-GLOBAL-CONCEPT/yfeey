@@ -61,7 +61,7 @@ const AboutHero = () => {
     >
       <AuroraBackground variant="light" />
 
-      <div className="container mx-auto px-6 mt-24 lg:mt-0 relative z-10">
+      <div className="container mx-auto px-6 md:px-10 max-w-7xl mt-24 lg:mt-0 relative z-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
           <div className="flex-1 text-center md:text-left">
             <h1

@@ -36,7 +36,7 @@ const Expertise = () => {
       id="expertise"
     >
       <div className="flex flex-col items-center justify-center gap-16">
-        <div className="container mx-auto max-w-2xl md:max-w-4xl text-center relative z-10 px-6">
+      <div className="container mx-auto max-w-7xl px-6 md:px-10 text-center relative z-10">
           <h2 className="text-text-main mb-8 text-4xl md:text-5xl lg:text-6xl">
             Our Thoughtful <br />
             Approach

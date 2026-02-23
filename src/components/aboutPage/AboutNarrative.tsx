@@ -1,21 +1,14 @@
 "use client";
 
-import React from "react";
-import AuroraBackground from "@/components/ui/AuroraBackground";
-
 const AboutNarrative = () => {
   return (
     <section className="relative bg-deepMidnight overflow-hidden py-24">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          <div className="flex flex-col gap-8">
-            <h2 className="text-white">
-              Clarity is the <br />
-              <span className="text-primary">
-                byproduct of discipline.
-              </span>
+      <div className="container mx-auto px-6 md:px-10 max-w-7xl relative z-10">
+        <div className="space-y-6">
+          <div className="max-w-lg">
+            <h2 className="text-primary">
+              Clarity is the byproduct of discipline.
             </h2>
-            <div className="w-24 h-1 bg-primary"></div>
           </div>
 
           <div className="lg:col-span-12 xl:col-span-7 flex flex-col gap-8">

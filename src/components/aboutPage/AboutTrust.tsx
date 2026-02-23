@@ -40,7 +40,7 @@ const AboutTrust = () => {
 
   return (
     <section className="bg-background-alt overflow-hidden relative py-16 md:py-24">
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 md:px-10 max-w-7xl relative z-10">
         {/* Responsive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
