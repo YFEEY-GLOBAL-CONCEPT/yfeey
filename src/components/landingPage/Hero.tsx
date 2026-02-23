@@ -31,10 +31,10 @@ const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-deep-midnight"
+      className="relative min-h-screen bg-primary flex items-center pt-28 pb-20 overflow-hidden "
     >
       {/* Aurora Gradient Background */}
-      <AuroraBackground />
+      {/* <AuroraBackground /> */}
 
       <div className="mx-auto w-full relative z-20 flex items-start flex-col lg:flex-row">
         <div className="w-full">
@@ -45,7 +45,7 @@ const Hero = () => {
           {/* Subtitle */}
           <p
             ref={subtitleRef}
-            className="text-gray-400 max-w-xl leading-relaxed mb-8"
+            className="text-gray-100 max-w-xl leading-relaxed mb-8"
           >
             Transforming Ideas into Scalable Systems. Yfeey empowers startups, businesses, and individuals to maximize efficiency and impact through people, technology, AI, and smart automation.
           </p>
@@ -55,11 +55,11 @@ const Hero = () => {
             ref={buttonsRef}
             className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
           >
-            <Button withArrow href="/contact" className="w-full sm:w-auto">
+            <Button variant="outline" withArrow href="/contact" className="w-full sm:w-auto">
               Start a Project
             </Button>
             <Button
-              variant="outline"
+              variant="secondary"
               href="/consultation"
               className="w-full sm:w-auto"
             >

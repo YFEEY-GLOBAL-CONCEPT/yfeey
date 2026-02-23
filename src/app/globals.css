@@ -4,11 +4,11 @@
   --color-primary: #8062c0;
   --color-primary-dark: #694fa0;
   --color-primary-glow: rgba(128, 98, 192, 0.2);
-  --color-background-base: #ffffff;
-  --color-background-alt: #f9fafb;
-  --color-text-main: #1f2937;
-  --color-text-muted: #6b7280;
-  --color-deep-midnight: #0e1118;
+  --color-backgroundBase: #ffffff;
+  --color-backgroundAlt: #f9fafb;
+  --color-textMain: #1f2937;
+  --color-textMuted: #6b7280;
+  --color-deepMidnight: #0e1118;
 
   --font-display: var(--font-poppins);
   --font-serif-brand: var(--font-literata);

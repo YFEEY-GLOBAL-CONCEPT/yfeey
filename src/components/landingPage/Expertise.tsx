@@ -45,7 +45,7 @@ const Expertise = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[80px] rounded-full pointer-events-none"></div>
             <p
               ref={textRef}
-              className="text-display-philosophy text-text-main relative z-10 max-w-3xl mx-auto text-2xl"
+              className="text-display-philosophy text-text-main relative z-10 mx-auto text-2xl"
             >
               We don’t just write code we engineer outcomes. In a world
               drowning in noise and inefficiency, Yfeey strips away the

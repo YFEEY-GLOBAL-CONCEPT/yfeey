@@ -20,7 +20,7 @@ const AuroraBackground = ({
         className={`absolute inset-0 transition-colors duration-700 ${
           isLight
             ? "bg-linear-to-br from-white via-background-alt to-white"
-            : "bg-linear-to-br from-deep-midnight via-[#1a1035] to-deep-midnight"
+            : "bg-linear-to-br from-deepMidnight via-[#1a1035] to-deepMidnight"
         }`}
       ></div>
 

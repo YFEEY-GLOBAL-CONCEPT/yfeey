@@ -1,18 +1,18 @@
 "use client";
 
-import React from "react";
-import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
+import React, { useState } from "react";
+import { Mail, Phone, Send } from "lucide-react";
 import { Button } from "../ui/button";
 
 const ContactForm = () => {
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "AI Automation Inquiry",
     message: "",
   });
-  const [status, setStatus] = React.useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = React.useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -48,84 +48,73 @@ const ContactForm = () => {
         subject: "AI Automation Inquiry",
         message: "",
       });
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
       setStatus("error");
-      setErrorMessage(error.message || "Something went wrong. Please try again.");
+      const message = error instanceof Error ? error.message : "Something went wrong. Please try again.";
+      setErrorMessage(message);
     }
   };
 
   return (
-    <section className="bg-deep-midnight relative overflow-hidden">
+    <section className="bg-primary relative overflow-hidden py-24">
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-20">
           {/* Contact Info */}
           <div className="space-y-12">
             <div>
               <h2 className="text-white mb-8">Contact Information</h2>
-              <p className="text-gray-400 max-w-md">
-                Reach out to us directly for immediate inquiries or visit one of
-                our offices.
+              <p className="text-white/70 max-w-md">
+                Reach out to us directly for immediate inquiries. We are here to help you engineer significant impact.
               </p>
             </div>
 
             <div className="space-y-8">
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center text-primary">
+                <div className="w-14 h-14 bg-white/10 border border-white/20 flex items-center justify-center text-white">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">
+                  <p className="text-xs text-white/50 uppercase tracking-widest font-bold mb-1">
                     Email Us
                   </p>
-                  <p className="text-white font-medium">hello@yfeey.com</p>
+                  <p className="text-white font-medium">info@yfeey.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center text-primary">
+                <div className="w-14 h-14 bg-white/10 border border-white/20 flex items-center justify-center text-white">
                   <Phone size={24} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">
+                  <p className="text-xs text-white/50 uppercase tracking-widest font-bold mb-1">
                     Call Us
                   </p>
-                  <p className="text-white font-medium">+234 812 3456 789</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/5 border border-white/10 flex items-center justify-center text-primary">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">
-                    Visit Us
-                  </p>
-                  <p className="text-white font-medium">
-                    Lagos Island, Lagos, Nigeria
-                  </p>
+                  <div className="space-y-1">
+                    <p className="text-white font-medium">+234 8032368560 (WhatsApp only)</p>
+                    <p className="text-white font-medium">+44 624 403102</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Form */}
-          <div className="bg-white/5 border border-white/10 p-6 md:p-16 backdrop-blur-xl relative">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -z-10 rounded-full"></div>
+          <div className="bg-white/10 border border-white/10 p-6 md:p-16 backdrop-blur-xl relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-[100px] -z-10 rounded-full"></div>
 
             {status === "success" ? (
               <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-12">
-                <div className="w-20 h-20 bg-primary/20 text-primary rounded-full flex items-center justify-center">
+                <div className="w-20 h-20 bg-white/20 text-white rounded-full flex items-center justify-center">
                   <Send size={40} />
                 </div>
                 <div>
                   <h3 className="text-white text-2xl mb-2">Message Sent!</h3>
-                  <p className="text-gray-400">
-                    Thank you for reaching out. We'll get back to you shortly.
+                  <p className="text-white/70">
+                    Thank you for reaching out. We&apos;ll get back to you shortly.
                   </p>
                 </div>
-                <Button onClick={() => setStatus("idle")} variant="outline">
+                <Button onClick={() => setStatus("idle")} variant="outline" className="text-white border-white/20 hover:bg-white/10">
                   Send Another Message
                 </Button>
               </div>
@@ -133,7 +122,7 @@ const ContactForm = () => {
               <form className="space-y-8" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                    <label className="text-xs font-bold uppercase tracking-widest text-white/60">
                       Full Name
                     </label>
                     <input
@@ -143,11 +132,11 @@ const ContactForm = () => {
                       required
                       type="text"
                       placeholder="John Doe"
-                      className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-primary/50 transition-colors"
+                      className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                    <label className="text-xs font-bold uppercase tracking-widest text-white/60">
                       Email Address
                     </label>
                     <input
@@ -157,13 +146,13 @@ const ContactForm = () => {
                       required
                       type="email"
                       placeholder="john@example.com"
-                      className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-primary/50 transition-colors"
+                      className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                  <label className="text-xs font-bold uppercase tracking-widest text-white/60">
                     Subject
                   </label>
                   <div className="relative">
@@ -171,22 +160,22 @@ const ContactForm = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full bg-white/5 border border-white/10 p-4 pr-12 text-white outline-none focus:border-primary/50 transition-colors appearance-none cursor-pointer"
+                      className="w-full bg-white/5 border border-white/10 p-4 pr-12 text-white outline-none focus:border-white/50 transition-colors appearance-none cursor-pointer"
                     >
-                      <option className="bg-deep-midnight text-white">
+                      <option className="bg-primary text-white">
                         AI Automation Inquiry
                       </option>
-                      <option className="bg-deep-midnight text-white">
+                      <option className="bg-primary text-white">
                         Custom Software Project
                       </option>
-                      <option className="bg-deep-midnight text-white">
+                      <option className="bg-primary text-white">
                         Branding & Visual Systems
                       </option>
-                      <option className="bg-deep-midnight text-white">
+                      <option className="bg-primary text-white">
                         General Inquiry
                       </option>
                     </select>
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/40">
                       <svg
                         width="16"
                         height="16"
@@ -204,7 +193,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-gray-400">
+                  <label className="text-xs font-bold uppercase tracking-widest text-white/60">
                     Your Message
                   </label>
                   <textarea
@@ -214,19 +203,19 @@ const ContactForm = () => {
                     required
                     rows={5}
                     placeholder="Tell us about your project..."
-                    className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-primary/50 transition-colors resize-none"
+                    className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors resize-none placeholder:text-white/20"
                   ></textarea>
                 </div>
 
                 {status === "error" && (
-                  <p className="text-red-500 text-sm">{errorMessage}</p>
+                  <p className="text-red-200 text-sm font-medium">{errorMessage}</p>
                 )}
 
                 <Button
                   withArrow
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full flex items-center justify-center gap-3"
+                  className="w-full flex items-center justify-center gap-3 bg-white text-primary hover:bg-white/90"
                 >
                   {status === "loading" ? "Sending..." : "Send Message"}
                 </Button>

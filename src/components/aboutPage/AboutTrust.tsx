@@ -98,33 +98,6 @@ const AboutTrust = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* Stats Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 mt-8 gap-6 sm:gap-8">
-              <div className="relative p-6 sm:p-8 bg-gray-900 overflow-hidden group transition-all duration-500 hover:-translate-y-2">
-                <AuroraBackground variant="dark" className="opacity-40" />
-                <div className="relative z-10">
-                  <p className="text-4xl sm:text-5xl font-medium text-white mb-2">
-                    98%
-                  </p>
-                  <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">
-                    Retention Rate
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative p-6 sm:p-8 bg-gray-900 overflow-hidden group transition-all duration-500 hover:-translate-y-2">
-                <AuroraBackground variant="dark" className="opacity-40" />
-                <div className="relative z-10">
-                  <p className="text-4xl sm:text-5xl font-medium text-white mb-2">
-                    24/7
-                  </p>
-                  <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">
-                    Systems Monitoring
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

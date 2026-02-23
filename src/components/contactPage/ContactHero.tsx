@@ -27,10 +27,10 @@ const ContactHero = () => {
     >
       <div className="container mx-auto relative z-10 text-center">
   
-        <h1 className="reveal text-white max-w-4xl mx-auto">
+        <h1 className="reveal text-primary max-w-4xl mx-auto">
           Let’s Build the Systems of Tomorrow.
         </h1>
-        <p className="reveal text-gray-400 mt-8 max-w-2xl mx-auto text-lg">
+        <p className="reveal text-textMain mt-8 max-w-2xl mx-auto text-lg">
           Whether you have a specific project in mind or just want to explore
           possibilities, we’re ready to help you engineer significant impact.
         </p>

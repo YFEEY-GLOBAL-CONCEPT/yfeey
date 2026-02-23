@@ -47,7 +47,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="relative bg-deep-midnight py-24" id="services">
+    <section className="relative bg-deepMidnight py-24" id="services">
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="mb-12">
           <h1 className=" text-white mb-6 uppercase">Our Services</h1>
