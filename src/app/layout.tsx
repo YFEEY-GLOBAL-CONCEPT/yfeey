@@ -17,9 +17,50 @@ const literata = Literata({
 });
 
 export const metadata: Metadata = {
-  title: "Yfeey - Intelligent Automation",
+  metadataBase: new URL("https://yfeey.com"),
+  title: {
+    default: "Yfeey - Intelligent Automation & AI Software Studio",
+    template: "%s | Yfeey",
+  },
   description:
-    "Digital agency focused on software, intelligent automation, and AI-driven systems.",
+    "Yfeey is a premier digital agency specializing in intelligent automation, custom software, and AI-driven systems. We engineer sustainable growth through robust digital infrastructure.",
+  keywords: [
+    "AI Automation",
+    "Custom Software Development",
+    "Digital Agency",
+    "System Architecture",
+    "Intelligent Systems",
+    "Business Automation",
+    "Yfeey Studio",
+  ],
+  authors: [{ name: "Yfeey Team" }],
+  creator: "Yfeey Studio",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://yfeey.com",
+    siteName: "Yfeey",
+    title: "Yfeey - Intelligent Automation & AI Software Studio",
+    description: "Engineering significant impact through people, technology, AI, and smart automation.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Yfeey - Intelligent Automation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yfeey - Intelligent Automation & AI Software Studio",
+    description: "Engineering significant impact through people, technology, AI, and smart automation.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

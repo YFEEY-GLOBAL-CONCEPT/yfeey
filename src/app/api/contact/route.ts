@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     const agencyEmail = resend.emails.send({
-      from: "Yfeey Contact Form <onboarding@resend.dev>",
+      from: "Yfeey Contact Form <info@yfeey.com>",
       to: [process.env.CONTACT_EMAIL || "info@yfeey.com"],
       subject: `New Contact Form Submission: ${subject || "General Inquiry"}`,
       replyTo: email,
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     });
 
     const userConfirmation = resend.emails.send({
-      from: "Yfeey <onboarding@resend.dev>",
+      from: "Yfeey <info@yfeey.com>",
       to: [email],
       subject: "We've received your message!",
       html: `
@@ -70,17 +70,25 @@ export async function POST(request: Request) {
     });
 
     const [agencyRes, userRes] = await Promise.all([agencyEmail, userConfirmation]);
+    
     if (agencyRes.error || userRes.error) {
-      console.error("Email error:", agencyRes.error || userRes.error);
+      console.error("Resend API error (Agency):", agencyRes.error);
+      console.error("Resend API error (User):", userRes.error);
       return NextResponse.json(
-        { error: agencyRes.error || userRes.error },
+        { 
+          error: "Failed to send email", 
+          details: agencyRes.error?.message || userRes.error?.message 
+        },
         { status: 400 }
       );
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Contact API error:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    console.error("Contact API Critical Error:", error);
+    return NextResponse.json(
+      { error: "Internal server error", details: error instanceof Error ? error.message : String(error) }, 
+      { status: 500 }
+    );
   }
 }

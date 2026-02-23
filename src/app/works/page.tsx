@@ -1,12 +1,15 @@
-
 import WorksHero from "@/components/worksPage/WorksHero";
 import WorksGrid from "@/components/worksPage/WorksGrid";
-import CTA from "@/components/landingPage/CTA";
 
 export const metadata = {
-  title: "Our Works - Yfeey Studio",
+  title: "Selected Works",
   description:
-    "A selection of our latest projects in AI automation, software development, and branding.",
+    "A showcase of our architectural approach to digital refinement, where growth is engineered into every system we build.",
+  openGraph: {
+    title: "Yfeey Portfolio - Intelligent Design & Engineering",
+    description: "Explore our latest projects in AI automation, custom software, and digital infrastructure.",
+    url: "https://yfeey.com/works",
+  },
 };
 
 const WorksPage = () => {

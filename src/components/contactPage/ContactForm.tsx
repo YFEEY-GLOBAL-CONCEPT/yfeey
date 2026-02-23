@@ -39,7 +39,8 @@ const ContactForm = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to send message");
+        const message = data.details ? `${data.error}: ${data.details}` : (data.error || "Failed to send message");
+        throw new Error(message);
       }
 
       setStatus("success");
@@ -59,7 +60,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-primary relative overflow-hidden py-24">
+    <section className="bg-deepMidnight relative overflow-hidden py-24">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
           {/* Contact Info */}
@@ -102,7 +103,7 @@ const ContactForm = () => {
           </div>
 
           {/* Form */}
-          <div className="bg-white/10 border border-white/10 p-6 md:p-10 lg:p-16 backdrop-blur-xl relative">
+          <div className="bg-deepMidnight border border-white/50 p-6 backdrop-blur-xl relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-[100px] -z-10 rounded-full"></div>
 
             {status === "success" ? (
@@ -124,7 +125,7 @@ const ContactForm = () => {
               <form className="space-y-8" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-white/60">
+                    <label className="text-xs font-bold uppercase tracking-widest text-white">
                       Full Name
                     </label>
                     <input
@@ -134,11 +135,11 @@ const ContactForm = () => {
                       required
                       type="text"
                       placeholder="John Doe"
-                      className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
+                      className="w-full bg-white/5 border border-white/50 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-white/60">
+                    <label className="text-xs font-bold uppercase tracking-widest text-white">
                       Email Address
                     </label>
                     <input
@@ -148,11 +149,11 @@ const ContactForm = () => {
                       required
                       type="email"
                       placeholder="john@example.com"
-                      className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
+                      className="w-full bg-white/5 border border-white/50 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-white/60">
+                    <label className="text-xs font-bold uppercase tracking-widest text-white">
                       Phone Number
                     </label>
                     <input
@@ -161,13 +162,13 @@ const ContactForm = () => {
                       onChange={handleChange}
                       type="tel"
                       placeholder="+234..."
-                      className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
+                      className="w-full bg-white/5 border border-white/50 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/60">
+                  <label className="text-xs font-bold uppercase tracking-widest text-white">
                     Subject
                   </label>
                   <div className="relative">
@@ -175,7 +176,7 @@ const ContactForm = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full bg-white/5 border border-white/10 p-4 pr-12 text-white outline-none focus:border-white/50 transition-colors appearance-none cursor-pointer"
+                      className="w-full bg-white/5 border border-white/50 p-4 pr-12 text-white outline-none focus:border-white/50 transition-colors appearance-none cursor-pointer"
                     >
                       <option className="bg-primary text-white">
                         AI Automation Inquiry
@@ -208,7 +209,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white/60">
+                  <label className="text-xs font-bold uppercase tracking-widest text-white">
                     Your Message
                   </label>
                   <textarea
@@ -218,7 +219,7 @@ const ContactForm = () => {
                     required
                     rows={5}
                     placeholder="Tell us about your project..."
-                    className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors resize-none placeholder:text-white/20"
+                    className="w-full bg-white/5 border border-white/70 p-4 text-white outline-none focus:border-white/50 transition-colors resize-none placeholder:text-white/20"
                   ></textarea>
                 </div>
 

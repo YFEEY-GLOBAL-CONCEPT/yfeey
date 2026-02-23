@@ -7,9 +7,14 @@ import AboutTrust from "@/components/aboutPage/AboutTrust";
 import AboutCTA from "@/components/aboutPage/AboutCTA";
 
 export const metadata = {
-  title: "About Yfeey - A Studio Built on Structure",
+  title: "About Our Studio",
   description:
-    "We specialize in the architectural refinement of digital systems, ensuring that growth is not just expected, but engineered.",
+    "Yfeey is an architectural refinement studio. We engineer systems that transform fragmented workflows into clear, scalable digital infrastructure.",
+  openGraph: {
+    title: "About Yfeey - Engineering Scalable Systems",
+    description: "Discover our thoughtful approach to system architecture and digital refinement.",
+    url: "https://yfeey.com/about",
+  },
 };
 
 const AboutPage = () => {

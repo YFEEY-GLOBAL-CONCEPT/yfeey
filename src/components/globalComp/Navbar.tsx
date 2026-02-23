@@ -86,7 +86,7 @@ const Navbar = () => {
       {/* ================= HEADER ================= */}
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center bg-white will-change-transform"
+        className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center glass-nav will-change-transform"
       >
         <div className="container mx-auto px-6 md:px-10 max-w-7xl flex items-center justify-between">
           {/* Logo */}
@@ -103,7 +103,7 @@ const Navbar = () => {
                 className={`text-sm font-semibold font-display nav-reveal transition-colors ${
                   isActive(item.href)
                     ? "text-primary"
-                    : "text-textMain hover:text-primary"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 {item.name}
@@ -118,7 +118,7 @@ const Navbar = () => {
             </Link>
 
             <button
-              className="md:hidden text-textMain p-2 hover:bg-black/5 rounded-lg transition-colors"
+              className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
             >
@@ -130,13 +130,13 @@ const Navbar = () => {
 
       {/* ================= MOBILE MENU ================= */}
       <div
-        className={`fixed inset-0 z-[60] bg-white transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed inset-0 z-[60] bg-deepMidnight transition-transform duration-300 ease-out md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full">
           {/* Top Bar */}
-          <div className="flex items-center justify-between p-6 border-b border-black/5">
+          <div className="flex items-center justify-between p-6 border-b border-white/10">
             <Link href="/" className="flex items-center">
               <Image src="/images/Logo.png" width={60} height={60} alt="logo" />
               <span className="text-primary font-bold">YFEEY</span>
@@ -144,7 +144,7 @@ const Navbar = () => {
 
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="text-textMain p-2 hover:bg-black/5 rounded-lg transition-colors"
+              className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
               aria-label="Close menu"
             >
               <X className="w-6 h-6" />
@@ -154,7 +154,7 @@ const Navbar = () => {
           {/* Navigation */}
           <nav className="flex-1 overflow-y-auto p-8 space-y-10">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-textMuted font-bold mb-4">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-4">
                 Navigation
               </p>
 
@@ -167,7 +167,7 @@ const Navbar = () => {
                       className={`text-2xl font-display block ${
                         isActive(item.href)
                           ? "text-primary"
-                          : "text-textMain hover:text-primary"
+                          : "text-white/80 hover:text-white"
                       }`}
                     >
                       {item.name}
@@ -179,7 +179,7 @@ const Navbar = () => {
           </nav>
 
           {/* Bottom CTA */}
-          <div className="p-8 border-t border-black/5">
+          <div className="p-8 border-t border-white/10">
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
               <Button size="lg" className="w-full">
                 Get Started
