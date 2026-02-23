@@ -31,14 +31,12 @@ const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen bg-primary flex items-center pt-28 pb-20 overflow-hidden "
+      className="relative min-h-screen bg-primary-dark flex items-center pt-28 pb-20 overflow-hidden "
     >
-      {/* Aurora Gradient Background */}
-      {/* <AuroraBackground /> */}
 
-      <div className="container mx-auto px-6 md:px-10 max-w-7xl relative z-20 flex items-start flex-col md:flex-row gap-12 lg:gap-0">
+      <div className="container mx-auto max-w-8xl relative z-20 flex items-start flex-col md:flex-row gap-12 lg:gap-0">
         <div className="w-full md:w-1/2">
-          <h1 ref={titleRef} className="mb-8 mt-16 max-w-4xl text-white text-5xl md:text-6xl lg:text-8xl">
+          <h1 ref={titleRef} className="mb-8 mt-16 max-w-4xl text-white">
             We Love a Good Challenge.
           </h1>
 
