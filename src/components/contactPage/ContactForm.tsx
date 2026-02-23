@@ -8,6 +8,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "AI Automation Inquiry",
     message: "",
   });
@@ -45,6 +46,7 @@ const ContactForm = () => {
       setFormData({
         name: "",
         email: "",
+        phone: "",
         subject: "AI Automation Inquiry",
         message: "",
       });
@@ -58,23 +60,23 @@ const ContactForm = () => {
 
   return (
     <section className="bg-primary relative overflow-hidden py-24">
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
           {/* Contact Info */}
-          <div className="space-y-12">
+          <div className="space-y-12 text-center lg:text-left">
             <div>
-              <h2 className="text-white mb-8">Contact Information</h2>
-              <p className="text-white/70 max-w-md">
+              <h2 className="text-white mb-8 text-3xl md:text-5xl lg:text-7xl">Contact Information</h2>
+              <p className="text-white/70 max-w-md mx-auto lg:mx-0 text-lg">
                 Reach out to us directly for immediate inquiries. We are here to help you engineer significant impact.
               </p>
             </div>
 
-            <div className="space-y-8">
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/10 border border-white/20 flex items-center justify-center text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-12 lg:gap-8">
+              <div className="flex items-center gap-6 group justify-center lg:justify-start">
+                <div className="w-14 h-14 bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
                   <Mail size={24} />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs text-white/50 uppercase tracking-widest font-bold mb-1">
                     Email Us
                   </p>
@@ -82,16 +84,16 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 bg-white/10 border border-white/20 flex items-center justify-center text-white">
+              <div className="flex items-center gap-6 group justify-center lg:justify-start">
+                <div className="w-14 h-14 bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
                   <Phone size={24} />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs text-white/50 uppercase tracking-widest font-bold mb-1">
                     Call Us
                   </p>
                   <div className="space-y-1">
-                    <p className="text-white font-medium">+234 8032368560 (WhatsApp only)</p>
+                    <p className="text-white font-medium whitespace-nowrap">+234 8032368560 (WhatsApp)</p>
                     <p className="text-white font-medium">+44 624 403102</p>
                   </div>
                 </div>
@@ -100,7 +102,7 @@ const ContactForm = () => {
           </div>
 
           {/* Form */}
-          <div className="bg-white/10 border border-white/10 p-6 md:p-16 backdrop-blur-xl relative">
+          <div className="bg-white/10 border border-white/10 p-6 md:p-10 lg:p-16 backdrop-blur-xl relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-[100px] -z-10 rounded-full"></div>
 
             {status === "success" ? (
@@ -146,6 +148,19 @@ const ContactForm = () => {
                       required
                       type="email"
                       placeholder="john@example.com"
+                      className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-white/60">
+                      Phone Number
+                    </label>
+                    <input
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      type="tel"
+                      placeholder="+234..."
                       className="w-full bg-white/5 border border-white/10 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
                     />
                   </div>

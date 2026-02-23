@@ -36,16 +36,16 @@ const Hero = () => {
       {/* Aurora Gradient Background */}
       {/* <AuroraBackground /> */}
 
-      <div className="mx-auto w-full relative z-20 flex items-start flex-col lg:flex-row">
-        <div className="w-full">
-          <h1 ref={titleRef} className="mb-8 mt-16 max-w-4xl text-white">
+      <div className="container mx-auto relative z-20 flex items-start flex-col md:flex-row gap-12 lg:gap-0">
+        <div className="w-full md:w-1/2 lg:w-full">
+          <h1 ref={titleRef} className="mb-8 mt-16 max-w-4xl text-white text-5xl md:text-6xl lg:text-8xl">
             We Love a Good Challenge.
           </h1>
 
           {/* Subtitle */}
           <p
             ref={subtitleRef}
-            className="text-gray-100 max-w-xl leading-relaxed mb-8"
+            className="text-gray-100 max-w-xl leading-relaxed mb-8 text-lg"
           >
             Transforming Ideas into Scalable Systems. Yfeey empowers startups, businesses, and individuals to maximize efficiency and impact through people, technology, AI, and smart automation.
           </p>
@@ -68,7 +68,7 @@ const Hero = () => {
           </div>
         </div>
         {/* Diagonal crossing marquee */}
-        <DiagonalMarquee className="lg:mt-16" />
+        <DiagonalMarquee className="md:mt-16 md:flex-1" />
       </div>
     </section>
   );

@@ -41,8 +41,8 @@ const projects = [
 const WorksGrid = () => {
 
   return (
-    <section className="py-24">
-      <div className="container mx-auto max-w-7xl">
+    <section className="py-24 bg-deepMidnight">
+      <div className="container mx-auto px-6 max-w-7xl">
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -64,7 +64,7 @@ const WorksGrid = () => {
                   </div>
                 </div>
               </div>
-              <div className="py-8">
+              <div className="p-8">
                 <h3 className="text-xl text-primary mb-4">{project.title}</h3>
                 <p className="text-textMain text-sm leading-relaxed">
                   {project.desc}

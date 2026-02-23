@@ -88,15 +88,14 @@ const Navbar = () => {
         ref={headerRef}
         className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center bg-white will-change-transform"
       >
-        <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+        <div className="container mx-auto px-6 md:px-10 max-w-7xl flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group nav-reveal">
             <Image src="/images/Logo.png" width={60} height={60} alt="logo" />
             <span className="text-primary font-bold">YFEEY</span>
           </Link>
-
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-10">
             {navItems.map((item) => (
               <Link
                 key={item.name}

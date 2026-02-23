@@ -61,12 +61,12 @@ const AboutHero = () => {
     >
       <AuroraBackground variant="light" />
 
-      <div className="container mx-auto mt-24 lg:mt-0 relative z-10">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          <div className="flex-1 text-center lg:text-left">
+      <div className="container mx-auto px-6 mt-24 lg:mt-0 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+          <div className="flex-1 text-center md:text-left">
             <h1
               ref={titleRef}
-              className="text-gray-900 mb-6"
+              className="text-gray-900 mb-6 text-4xl md:text-5xl lg:text-7xl"
             >
               Building the Next <br /> Era of{" "}
               <span className=" text-primary">
@@ -75,7 +75,7 @@ const AboutHero = () => {
             </h1>
             <p
               ref={subtitleRef}
-              className="text-gray-600 max-w-xl lg:mx-0 mx-auto"
+              className="text-gray-600 max-w-xl md:mx-0 mx-auto text-lg"
             >
               Yfeey is an architectural refinement studio. We engineer systems
               that transform fragmented workflows into clear, scalable digital
@@ -85,7 +85,7 @@ const AboutHero = () => {
 
           <div
             ref={imageRef}
-            className="flex-1 relative w-full aspect-square md:aspect-video lg:aspect-square overflow-hidden "
+            className="flex-1 relative w-full aspect-square overflow-hidden "
           >
             <Image
               src="https://images.unsplash.com/photo-1681505531034-8d67054e07f6?auto=format&fit=crop&q=80&w=1200"

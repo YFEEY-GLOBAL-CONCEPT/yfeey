@@ -40,15 +40,15 @@ const AboutTrust = () => {
 
   return (
     <section className="bg-background-alt overflow-hidden relative py-16 md:py-24">
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div>
-            <h2 className="text-gray-900 max-w-lg mb-6 md:mb-8">
+          <div className="text-center md:text-left">
+            <h2 className="text-gray-900 mx-auto md:mx-0 max-w-lg mb-6 md:mb-8 text-3xl md:text-4xl lg:text-5xl">
               Built on trust. Sustained by results.
             </h2>
-            <p className="text-gray-600 mb-10 md:mb-12 max-w-md text-xl">
+            <p className="text-gray-600 mx-auto md:mx-0 mb-10 md:mb-12 max-w-md text-lg md:text-xl">
               Our partners aren{"'"}t just names in a database; they are
               collaborators in a long-term vision of technical excellence.
             </p>

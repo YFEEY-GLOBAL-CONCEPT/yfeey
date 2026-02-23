@@ -49,8 +49,8 @@ const Services = () => {
   return (
     <section className="relative bg-deepMidnight py-24" id="services">
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="mb-12">
-          <h1 className=" text-white mb-6 uppercase">Our Services</h1>
+        <div className="mb-12 px-6 lg:px-0">
+          <h1 className="text-white mb-6 uppercase text-4xl md:text-5xl lg:text-7xl">Our Services</h1>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

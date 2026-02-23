@@ -23,14 +23,14 @@ const ContactHero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative pt-40 bg-deep-midnight overflow-hidden"
+      className="relative pt-32 md:pt-48 pb-12 md:pb-20 bg-deep-midnight overflow-hidden"
     >
-      <div className="container mx-auto relative z-10 text-center">
+      <div className="container mx-auto px-6 relative z-10 text-center">
   
-        <h1 className="reveal text-primary max-w-4xl mx-auto">
+        <h1 className="reveal text-primary max-w-4xl mx-auto text-4xl md:text-5xl lg:text-7xl">
           Let’s Build the Systems of Tomorrow.
         </h1>
-        <p className="reveal text-textMain mt-8 max-w-2xl mx-auto text-lg">
+        <p className="reveal text-textMain mt-8 max-w-2xl mx-auto text-lg md:text-xl">
           Whether you have a specific project in mind or just want to explore
           possibilities, we’re ready to help you engineer significant impact.
         </p>
