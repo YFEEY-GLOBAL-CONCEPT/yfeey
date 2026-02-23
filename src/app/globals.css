@@ -109,7 +109,7 @@
   }
 
   h1 {
-    @apply font-serif-brand text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.05];
+    @apply font-serif-brand text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight leading-[1.05];
   }
 
   h2 {
