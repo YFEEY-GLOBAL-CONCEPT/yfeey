@@ -59,11 +59,11 @@ const Services = () => {
             return (
               <div
                 key={service.title}
-                className="group relative flex flex-col justify-between overflow-hidden border border-white bg-white/10 p-8 transition-all duration-500 lg:border-white/50 lg:bg-white/5 lg:hover:border-white lg:hover:bg-white/10 cursor-default"
+                className="group relative flex flex-col justify-between hover:primary-dark duration-500 overflow-hidden border border-white bg-white/10 p-8 transition-all duration-500 lg:border-white/50 lg:bg-white/5 lg:hover:border-white lg:hover:bg-white/10 cursor-default"
               >
-                <div className="absolute inset-0 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none">
+                {/* <div className="absolute inset-0 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none">
                   <AuroraBackground />
-                </div>
+                </div> */}
 
                 <div className="relative z-10 mb-4 w-fit ">
                   <Icon strokeWidth={1} className="h-8 w-8 text-white" />

@@ -3,7 +3,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import AuroraBackground from "@/components/ui/AuroraBackground";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -71,9 +70,9 @@ const AboutTrust = () => {
               className="overflow-hidden"
             >
               {testimonials.map((t, i) => (
-                <SwiperSlide key={i} className="h-auto">
-                  <div className="min-h-64 lg:h-full p-6 sm:p-8 md:p-14 bg-gray-900 flex flex-col justify-between transition-all duration-500 relative overflow-hidden">
-                    <AuroraBackground variant="dark" className="opacity-50" />
+                <SwiperSlide key={i} className="h-auto bg-primary-dark">
+                  <div className="min-h-64 lg:h-full p-6 sm:p-8 md:p-14 bg-primary-dark flex flex-col justify-between transition-all duration-500 relative overflow-hidden">
+                    {/* <AuroraBackground variant="dark" className="opacity-50" /> */}
 
                     <div className="relative z-10">
                       <p className="font-serif-brand text-lg sm:text-xl leading-relaxed mb-8 text-white">

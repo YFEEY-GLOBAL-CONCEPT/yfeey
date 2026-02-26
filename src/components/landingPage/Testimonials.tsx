@@ -86,12 +86,12 @@ const Testimonials = () => {
             className="overflow-x-hidden"
           >
             {testimonials.map((t, i) => (
-              <SwiperSlide key={i} className="h-auto">
+              <SwiperSlide key={i} className="h-auto bg-primary-dark">
                 <div className="h-80 p-8 border border-white bg-white/10 flex flex-col justify-between transition-all duration-500 relative overflow-hidden group">
                   {/* Active State Background Effect */}
-                  <div className="absolute inset-0 pointer-events-none rounded-lg opacity-100">
+                  {/* <div className="absolute inset-0 pointer-events-none rounded-lg opacity-100">
                     <AuroraBackground />
-                  </div>
+                  </div> */}
 
                   <div className="relative z-10">
                     <p className="font-serif-brand text-xl leading-relaxed mb-8 text-white">

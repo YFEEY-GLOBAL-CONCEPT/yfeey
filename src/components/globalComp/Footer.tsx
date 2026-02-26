@@ -95,7 +95,7 @@ const Footer = () => {
 
         {/* Middle Bar: Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-12 border-t border-white/5 text-[10px] font-bold tracking-[0.2em] uppercase text-white">
-          <p>© 2026 YFEEY. ALL RIGHTS RESERVED.</p>
+          <p>© 2026 YFEEY. All right reserved.</p>
           <div className="flex gap-8">
             {legalLinks.map((link) => (
               <Link

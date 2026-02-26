@@ -57,7 +57,7 @@ const Process = () => {
               className="process-step relative flex flex-col gap-8 p-8 lg:p-12 bg-primary"
             >
               <div className="flex items-center justify-between">
-                <span className="font-display text-6xl lg:text-7xl font-extrabold text-white/30">
+                <span className="font-display text-6xl lg:text-7xl font-extrabold text-white">
                   {step.num}
                 </span>
                 <step.icon className="w-8 h-8 text-white" />
