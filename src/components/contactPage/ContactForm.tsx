@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Phone, Send } from "lucide-react";
+import { Mail, Phone, Send, MapPin } from "lucide-react";
 import { Button } from "../ui/button";
+import { sendContactEmail } from "@/app/actions/sendContactEmail";
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,7 @@ const ContactForm = () => {
     phone: "",
     subject: "AI Automation Inquiry",
     message: "",
+    company: "", // Honeypot field
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -28,19 +31,10 @@ const ContactForm = () => {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const result = await sendContactEmail(formData);
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        const message = data.details ? `${data.error}: ${data.details}` : (data.error || "Failed to send message");
-        throw new Error(message);
+      if (!result.success) {
+        throw new Error(result.error);
       }
 
       setStatus("success");
@@ -50,17 +44,19 @@ const ContactForm = () => {
         phone: "",
         subject: "AI Automation Inquiry",
         message: "",
+        company: "",
       });
     } catch (error: unknown) {
       console.error(error);
       setStatus("error");
-      const message = error instanceof Error ? error.message : "Something went wrong. Please try again.";
+      const message =
+        error instanceof Error ? error.message : "Something went wrong. Please try again.";
       setErrorMessage(message);
     }
   };
 
   return (
-    <section className="bg-deepMidnight relative overflow-hidden py-24">
+    <section className="bg-primary-dark relative overflow-hidden py-24">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
           {/* Contact Info */}
@@ -99,11 +95,26 @@ const ContactForm = () => {
                   </div>
                 </div>
               </div>
+
+              <div className="flex items-center gap-6 group justify-center lg:justify-start">
+                <div className="w-14 h-14 bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
+                  <MapPin size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-white/50 uppercase tracking-widest font-bold mb-1">
+                    Our Locations
+                  </p>
+                  <div className="space-y-1">
+                    <p className="text-white font-medium">Isle of Man</p>
+                    <p className="text-white font-medium">Nigeria</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Form */}
-          <div className="bg-deepMidnight border border-white/50 p-6 backdrop-blur-xl relative">
+          <div className="bg-white border border-white/50 p-6 backdrop-blur-xl relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-[100px] -z-10 rounded-full"></div>
 
             {status === "success" ? (
@@ -112,20 +123,32 @@ const ContactForm = () => {
                   <Send size={40} />
                 </div>
                 <div>
-                  <h3 className="text-white text-2xl mb-2">Message Sent!</h3>
-                  <p className="text-white/70">
+                  <h3 className="text-primary text-2xl mb-2">Message Sent!</h3>
+                  <p className="text-primary/70">
                     Thank you for reaching out. We&apos;ll get back to you shortly.
                   </p>
                 </div>
-                <Button onClick={() => setStatus("idle")} variant="outline" className="text-white border-white/20 hover:bg-white/10">
+                <Button onClick={() => setStatus("idle")} variant="outline" className="text-primary border-primary/20 hover:bg-primary/10">
                   Send Another Message
                 </Button>
               </div>
             ) : (
               <form className="space-y-8" onSubmit={handleSubmit}>
+                {/* Honeypot field (hidden) */}
+                <div className="hidden">
+                  <label>Company</label>
+                  <input
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    autoComplete="off"
+                    tabIndex={-1}
+                  />
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-white">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
                       Full Name
                     </label>
                     <input
@@ -135,11 +158,11 @@ const ContactForm = () => {
                       required
                       type="text"
                       placeholder="John Doe"
-                      className="w-full bg-white/5 border border-white/50 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
+                      className="w-full bg-primary/30 border border-primary/70 p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-white">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
                       Email Address
                     </label>
                     <input
@@ -149,11 +172,11 @@ const ContactForm = () => {
                       required
                       type="email"
                       placeholder="john@example.com"
-                      className="w-full bg-white/5 border border-white/50 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
+                      className="w-full bg-primary/30 border border-primary/70 p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-white">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
                       Phone Number
                     </label>
                     <input
@@ -162,13 +185,13 @@ const ContactForm = () => {
                       onChange={handleChange}
                       type="tel"
                       placeholder="+234..."
-                      className="w-full bg-white/5 border border-white/50 p-4 text-white outline-none focus:border-white/50 transition-colors placeholder:text-white/20"
+                      className="w-full bg-primary/30 border border-primary/70 p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white">
+                  <label className="text-xs font-bold uppercase tracking-widest text-primary">
                     Subject
                   </label>
                   <div className="relative">
@@ -176,18 +199,18 @@ const ContactForm = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full bg-white/5 border border-white/50 p-4 pr-12 text-white outline-none focus:border-white/50 transition-colors appearance-none cursor-pointer"
+                      className="w-full bg-primary/30 border border-primary/70 p-4 pr-12 text-black outline-none focus:border-primary/50 transition-colors appearance-none cursor-pointer"
                     >
-                      <option className="bg-primary text-white">
+                      <option className="bg-primary/30 text-black">
                         AI Automation Inquiry
                       </option>
-                      <option className="bg-primary text-white">
+                      <option className="bg-primary/30 text-black">
                         Custom Software Project
                       </option>
-                      <option className="bg-primary text-white">
+                      <option className="bg-primary/30 text-black">
                         Branding & Visual Systems
                       </option>
-                      <option className="bg-primary text-white">
+                      <option className="bg-primary/30 text-black">
                         General Inquiry
                       </option>
                     </select>
@@ -209,7 +232,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-white">
+                  <label className="text-xs font-bold uppercase tracking-widest text-primary">
                     Your Message
                   </label>
                   <textarea
@@ -219,19 +242,19 @@ const ContactForm = () => {
                     required
                     rows={5}
                     placeholder="Tell us about your project..."
-                    className="w-full bg-white/5 border border-white/70 p-4 text-white outline-none focus:border-white/50 transition-colors resize-none placeholder:text-white/20"
+                    className="w-full bg-primary/30 border border-primary/70 p-4 text-black outline-none focus:border-primary/50 transition-colors resize-none placeholder:text-black/30"
                   ></textarea>
                 </div>
 
                 {status === "error" && (
-                  <p className="text-red-200 text-sm font-medium">{errorMessage}</p>
+                  <p className="text-red-500 text-sm font-medium">{errorMessage}</p>
                 )}
 
                 <Button
                   withArrow
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full flex items-center justify-center gap-3 bg-white text-primary hover:bg-white/90"
+                  className="w-full flex items-center justify-center gap-3 text-white bg-primary hover:bg-primary-dark"
                 >
                   {status === "loading" ? "Sending..." : "Send Message"}
                 </Button>
@@ -245,3 +268,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+

@@ -66,9 +66,12 @@ const Footer = () => {
               <h4 className="text-xs font-bold uppercase tracking-widest text-primary">
                 Let&apos;s Talk
               </h4>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <p className="text-lg font-medium">info@yfeey.com</p>
-                <p className="text-white">+44 624 403102</p>
+                <div className="text-white space-y-1">
+                  <p>Isle of Man</p>
+                  <p>Nigeria</p>
+                </div>
               </div>
             </div>
 
