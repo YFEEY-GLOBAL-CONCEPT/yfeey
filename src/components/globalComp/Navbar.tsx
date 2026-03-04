@@ -180,11 +180,11 @@ const Navbar = () => {
 
           {/* Bottom CTA */}
           <div className="p-8 border-t border-white/10">
-            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-              <Button size="lg" className="w-full">
-                Get Started
+           
+              <Button onClick={() => setMobileMenuOpen(false)} size="lg" href="https://forms.office.com/e/Jc2nz54Hw8" className="w-full">
+                Contact Us
               </Button>
-            </Link>
+          
           </div>
         </div>
       </div>

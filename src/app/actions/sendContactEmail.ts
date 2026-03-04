@@ -1,7 +1,6 @@
 "use server";
 
 import { Resend } from "resend";
-import { z } from "zod";
 import { headers } from "next/headers";
 import { env } from "@/lib/env";
 import { isRateLimited } from "@/lib/rate-limit";
@@ -19,14 +18,7 @@ export type ContactActionResponse =
 /*                              ZOD VALIDATION                                */
 /* -------------------------------------------------------------------------- */
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters").max(100),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().max(30).optional().or(z.literal("")),
-  subject: z.string().max(150).optional().or(z.literal("")),
-  message: z.string().min(2, "Message is too short").max(5000),
-  company: z.string().optional().or(z.literal("")), // honeypot
-});
+import { contactSchema } from "@/lib/validations/contact";
 
 const resend = new Resend(env.RESEND_API_KEY);
 

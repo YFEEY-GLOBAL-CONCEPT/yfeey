@@ -16,10 +16,10 @@ const socialLinks = [
   { Icon: MessageCircle, href: "https://wa.me/2348032368560", label: "WhatsApp" },
 ];
 
-const legalLinks = [
-  { name: "Terms & Conditions", href: "#" },
-  { name: "Privacy Policy", href: "#" },
-];
+// const legalLinks = [
+//   { name: "Terms & Conditions", href: "#" },
+//   { name: "Privacy Policy", href: "#" },
+// ];
 
 const Footer = () => {
   return (
@@ -96,8 +96,8 @@ const Footer = () => {
         {/* Middle Bar: Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-12 border-t border-white/5 text-[10px] font-bold tracking-[0.2em] uppercase text-white">
           <p>© 2026 YFEEY. All right reserved.</p>
-          <div className="flex gap-8">
-            {legalLinks.map((link) => (
+          {/* <div className="flex gap-8">
+            {legalLinks?.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -106,7 +106,7 @@ const Footer = () => {
                 {link.name}
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Section: Branding */}

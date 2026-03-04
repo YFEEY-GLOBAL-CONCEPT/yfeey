@@ -2,50 +2,51 @@
 
 import React, { useState } from "react";
 import { Mail, Phone, Send, MapPin } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../ui/button";
 import { sendContactEmail } from "@/app/actions/sendContactEmail";
-
+import { contactSchema, type ContactFormData } from "@/lib/validations/contact";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "AI Automation Inquiry",
-    message: "",
-    company: "", // Honeypot field
-  });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+    watch,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    mode: "onBlur",
+    reValidateMode: "onChange",
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "AI Automation Inquiry",
+      message: "",
+      company: "",
+    },
+  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const messageValue = watch("message") || "";
+
+  const onSubmit = async (data: ContactFormData) => {
     setStatus("loading");
     setErrorMessage("");
 
     try {
-      const result = await sendContactEmail(formData);
+      const result = await sendContactEmail(data);
 
       if (!result.success) {
         throw new Error(result.error);
       }
 
       setStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "AI Automation Inquiry",
-        message: "",
-        company: "",
-      });
+      reset();
     } catch (error: unknown) {
       console.error(error);
       setStatus("error");
@@ -54,6 +55,7 @@ const ContactForm = () => {
       setErrorMessage(message);
     }
   };
+
 
   return (
     <section className="bg-primary-dark relative overflow-hidden py-24">
@@ -133,14 +135,12 @@ const ContactForm = () => {
                 </Button>
               </div>
             ) : (
-              <form className="space-y-8" onSubmit={handleSubmit}>
+              <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
                 {/* Honeypot field (hidden) */}
                 <div className="hidden">
                   <label>Company</label>
                   <input
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
+                    {...register("company")}
                     autoComplete="off"
                     tabIndex={-1}
                   />
@@ -149,44 +149,55 @@ const ContactForm = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-primary">
-                      Full Name
+                      Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
+                      {...register("name")}
                       type="text"
                       placeholder="John Doe"
-                      className="w-full bg-primary/30 border border-primary/70 p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20"
+                      className={`w-full bg-primary/30 border ${
+                        errors.name ? "border-red-500" : "border-primary/70"
+                      } p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20`}
                     />
+                    {errors.name && (
+                      <p className="text-red-500 text-[10px] mt-1 italic">{errors.name.message}</p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-primary">
-                      Email Address
+                      Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
+                      {...register("email")}
                       type="email"
                       placeholder="john@example.com"
-                      className="w-full bg-primary/30 border border-primary/70 p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20"
+                      className={`w-full bg-primary/30 border ${
+                        errors.email ? "border-red-500" : "border-primary/70"
+                      } p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20`}
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-[10px] mt-1 italic">{errors.email.message}</p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-primary">
                       Phone Number
                     </label>
                     <input
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
+                      {...register("phone")}
                       type="tel"
                       placeholder="+234..."
-                      className="w-full bg-primary/30 border border-primary/70 p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20"
+                      maxLength={20}
+                      onInput={(e) => {
+                        e.currentTarget.value = e.currentTarget.value.replace(/[^0-9\s\-()+]/g, "");
+                      }}
+                      className={`w-full bg-primary/30 border ${
+                        errors.phone ? "border-red-500" : "border-primary/70"
+                      } p-4 text-black outline-none focus:border-primary/50 transition-colors placeholder:text-black/20`}
                     />
+                    {errors.phone && (
+                      <p className="text-red-500 text-[10px] mt-1 italic">{errors.phone.message}</p>
+                    )}
                   </div>
                 </div>
 
@@ -196,9 +207,7 @@ const ContactForm = () => {
                   </label>
                   <div className="relative">
                     <select
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
+                      {...register("subject")}
                       className="w-full bg-primary/30 border border-primary/70 p-4 pr-12 text-black outline-none focus:border-primary/50 transition-colors appearance-none cursor-pointer"
                     >
                       <option className="bg-primary/30 text-black">
@@ -229,22 +238,33 @@ const ContactForm = () => {
                       </svg>
                     </div>
                   </div>
+                  {errors.subject && (
+                    <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-primary">
-                    Your Message
-                  </label>
+                  <div className="flex justify-between items-center">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
+                      Your Message <span className="text-red-500">*</span>
+                    </label>
+                    <span className={`text-[10px] font-medium ${messageValue.length > 2000 ? "text-red-500 font-bold" : "text-primary/50"}`}>
+                      {messageValue.length}/2000
+                    </span>
+                  </div>
                   <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
+                    {...register("message")}
                     rows={5}
                     placeholder="Tell us about your project..."
-                    className="w-full bg-primary/30 border border-primary/70 p-4 text-black outline-none focus:border-primary/50 transition-colors resize-none placeholder:text-black/30"
+                    className={`w-full bg-primary/30 border ${
+                      errors.message ? "border-red-500" : "border-primary/70"
+                    } p-4 text-black outline-none focus:border-primary/50 transition-colors resize-none placeholder:text-black/30`}
                   ></textarea>
+                  {errors.message && (
+                    <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
+                  )}
                 </div>
+
 
                 {status === "error" && (
                   <p className="text-red-500 text-sm font-medium">{errorMessage}</p>
