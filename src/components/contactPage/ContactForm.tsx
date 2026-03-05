@@ -135,7 +135,7 @@ const ContactForm = () => {
                 </Button>
               </div>
             ) : (
-              <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
+              <form id="contact" className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
                 {/* Honeypot field (hidden) */}
                 <div className="hidden">
                   <label>Company</label>

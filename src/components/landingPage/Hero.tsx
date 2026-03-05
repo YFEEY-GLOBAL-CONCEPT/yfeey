@@ -58,7 +58,7 @@ const Hero = () => {
             </Button>
             <Button
               variant="secondary"
-              href="/contact"
+              href="/contact#contact"
               className="w-full sm:w-auto"
             >
               Book a Consultation
