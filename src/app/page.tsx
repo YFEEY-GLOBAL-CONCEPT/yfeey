@@ -23,7 +23,7 @@ export default function Home() {
       <Expertise />
       <Services />
       <Process />
-      <Testimonials />
+      {/* <Testimonials /> */}
     </main>
   );
 }
