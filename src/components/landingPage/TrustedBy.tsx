@@ -46,7 +46,7 @@ const TrustedBy = () => {
     <div className="py-6 relative overflow-hidden">
       <div className="container mx-auto  lg:px-6 max-w-7xl relative z-10">
         <div className="text-center">
-          <span className="text-lg font-semibold font-display tracking-widest uppercase text-muted-foreground/60 whitespace-nowrap">
+          <span className="text-lg font-semibold font-display tracking-widest text-muted-foreground/60 whitespace-nowrap">
             Who We Have Worked With
           </span>
 

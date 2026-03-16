@@ -49,7 +49,7 @@ const MarqueeStrip = ({
         {duplicated.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/30 bg-white/10 text-white/80 text-xs font-display uppercase tracking-[0.15em] shrink-0 backdrop-blur-sm hover:bg-white/90 hover:text-primary transition-all duration-300 shadow-sm"
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/30 bg-white/10 text-primary text-xs font-display uppercase tracking-[0.15em] shrink-0 backdrop-blur-sm hover:bg-white/90 hover:text-primary transition-all duration-300 shadow-sm"
           >
             <span className="w-1 h-1 rounded-full bg-primary/60"></span>
             {item}
