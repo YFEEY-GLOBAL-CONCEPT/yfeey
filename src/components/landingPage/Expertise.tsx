@@ -37,7 +37,7 @@ const Expertise = () => {
     >
       <div className="flex flex-col items-center justify-center gap-16">
       <div className="container mx-auto max-w-7xl px-6 md:px-10 text-center relative z-10">
-          <h2 className="text-text-main mb-8 text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="uppercase text-text-main mb-8 text-4xl md:text-5xl lg:text-6xl">
             Our Thoughtful <br />
             Approach
           </h2>
@@ -47,7 +47,7 @@ const Expertise = () => {
               ref={textRef}
               className="text-display-philosophy text-text-main relative z-10 mx-auto text-xl md:text-2xl lg:text-3xl leading-relaxed"
             >
-              We don’t just write code we engineer outcomes. In a world
+              We don’t just write code we engineer outcomes. <br />In a world
               drowning in noise and inefficiency, Yfeey strips away the
               complexity. We design systems that are{" "}
               <span className="text-primary font-medium not-italic">

@@ -39,13 +39,16 @@ const Hero = () => {
           <h1 ref={titleRef} className="mb-8 mt-16 max-w-4xl text-white">
             We Love a Good Challenge.
           </h1>
+          <p ref={titleRef} className="text-gray-100 max-w-xl leading-relaxed mb-8 text-lg">
+            Transforming Ideas into Scalable Systems.
+          </p>
 
           {/* Subtitle */}
           <p
             ref={subtitleRef}
             className="text-gray-100 max-w-xl leading-relaxed mb-8 text-lg"
           >
-            Transforming Ideas into Scalable Systems. Yfeey empowers startups, businesses, and individuals to maximize efficiency and impact through people, technology, AI, and smart automation.
+            Yfeey empowers startups, businesses, and individuals to maximize efficiency and impact through people, technology, AI, and smart automation.
           </p>
 
           {/* Buttons */}

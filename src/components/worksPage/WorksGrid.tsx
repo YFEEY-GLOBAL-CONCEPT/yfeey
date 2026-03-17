@@ -1,41 +1,39 @@
-"use client";
-
-import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 
 const projects = [
   {
-    title: "Nova Financial Core",
-    desc: "Reimagining institutional banking interfaces with predictive analytics.",
+    title: "Yfeey Interior",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+      "/images/yfeey-interior.png",
+    link: "https://yfeey.design",
   },
   {
-    title: "Nexus AI",
-    desc: "Natural language processing interface for complex industrial data.",
+    title: "Yfeey Hub",
     image:
-      "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=1200",
+      "/images/resturanthub.png",
+    link: "https://yfeey.online",
   },
   {
-    title: "Cipher Wallet",
-    desc: "Next-gen crypto asset management systems for global enterprises.",
+    title: "Yfeey Store",
     image:
-      "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=1200",
+      "/images/yfeey-store.png",
+    link: "https://yfeey.store",
   },
   {
-    title: "Fortress Cloud",
-    desc: "Enterprise-grade threat detection visualization and response systems.",
+    title: "Seaf Legal",
     image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1200",
+      "/images/seaflegal.png",
+    link: "https://seaflegal.com",
   },
   {
-    title: "Aura Branding",
-    desc: "A complete visual identity system for a forward-thinking AI research lab.",
+    title: "Tracmedy",
     image:
-      "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1200",
-  },
+      "/images/tracmedy.png",
+    link: "https://tracmedy.com",
+  }
 ];
 
 const WorksGrid = () => {
@@ -47,8 +45,10 @@ const WorksGrid = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
-            <div
+            <Link
               key={i}
+              href={project.link}
+              target="_blank"
               className="group relative flex flex-col bg-white/5 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500"
             >
               <div className="relative h-64 overflow-hidden">
@@ -64,13 +64,13 @@ const WorksGrid = () => {
                   </div>
                 </div>
               </div>
-              <div className="py-8">
+              <div className="py-4">
                 <h3 className="text-xl text-primary mb-4">{project.title}</h3>
-                <p className="text-textMain text-sm leading-relaxed">
+                {/* <p className="text-textMain text-sm leading-relaxed">
                   {project.desc}
-                </p>
+                </p> */}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
