@@ -8,7 +8,7 @@ const projects = [
     title: "Yfeey Interior",
     image:
       "/images/yfeey-interior.png",
-    link: "https://yfeey.design",
+    link: "https://yfeey.space",
   },
   {
     title: "Yfeey Hub",
