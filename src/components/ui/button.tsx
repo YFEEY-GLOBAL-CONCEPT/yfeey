@@ -40,6 +40,7 @@ export interface ButtonProps
   asChild?: boolean;
   withArrow?: boolean;
   href?: string;
+  target?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -51,6 +52,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       asChild = false,
       withArrow = false,
       href,
+      target,
       children,
       ...props
     },
@@ -59,6 +61,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     if (href) {
       return (
         <Link
+          target={target}
           href={href}
           className={cn(buttonVariants({ variant, size, className }), "group")}
           {...(props as Omit<

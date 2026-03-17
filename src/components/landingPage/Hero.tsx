@@ -56,7 +56,7 @@ const Hero = () => {
             ref={buttonsRef}
             className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
           >
-            <Button variant="outline" withArrow href="https://forms.office.com/e/Jc2nz54Hw8" className="w-full sm:w-auto">
+            <Button target="_blank" variant="outline" withArrow href="https://forms.office.com/e/Jc2nz54Hw8" className="w-full sm:w-auto">
               Start a Project
             </Button>
             <Button
