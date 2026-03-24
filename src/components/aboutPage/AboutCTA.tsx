@@ -39,9 +39,12 @@ const AboutCTA = () => {
           <AuroraBackground className="opacity-40" />
 
           <div className="relative z-10">
-            <h2 className="mb-12 text-white">
-              Let{"'"}s build your next era.
+            <h2 className="mb-6 text-white">
+              Ready to Build Something That Lasts?
             </h2>
+            <p className="text-white/70 max-w-lg mx-auto mb-12 text-lg">
+              Whether you&apos;re launching a product, scaling a team, or rethinking your entire operational infrastructure — we&apos;d love to hear what you&apos;re working on.
+            </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Button

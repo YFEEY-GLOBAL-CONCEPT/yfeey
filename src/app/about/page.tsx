@@ -1,15 +1,14 @@
-
 import AboutHero from "@/components/aboutPage/AboutHero";
-import AboutNarrative from "@/components/aboutPage/AboutNarrative";
+import AboutWho from "@/components/aboutPage/AboutWho";
+import AboutMission from "@/components/aboutPage/AboutMission";
 import AboutValues from "@/components/aboutPage/AboutValues";
-import AboutMethodology from "@/components/aboutPage/AboutMethodology";
-import AboutTrust from "@/components/aboutPage/AboutTrust";
+import AboutStory from "@/components/aboutPage/AboutStory";
 import AboutCTA from "@/components/aboutPage/AboutCTA";
 
 export const metadata = {
   title: "About Our Studio",
   description:
-    "Yfeey is an architectural refinement studio. We engineer systems that transform fragmented workflows into clear, scalable digital infrastructure.",
+    "YFEEY is a technology and systems company engineering the infrastructure that serious growth demands.",
   openGraph: {
     title: "About Yfeey - Engineering Scalable Systems",
     description: "Discover our thoughtful approach to system architecture and digital refinement.",
@@ -21,11 +20,11 @@ const AboutPage = () => {
   return (
     <main className="min-h-screen bg-white" >
       <AboutHero />
-      <AboutNarrative />
+      <AboutWho />
+      {/* <AboutMission /> */}
       <AboutValues />
-      <AboutMethodology />
-      {/* <AboutTrust /> */}
-      <AboutCTA />
+      <AboutStory />
+      {/* <AboutCTA /> */}
     </main>
   );
 };

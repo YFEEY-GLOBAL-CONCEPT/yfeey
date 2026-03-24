@@ -6,30 +6,35 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     title: "Yfeey Interior",
+    desc: "Interior design & hospitality web platform",
     image:
       "/images/yfeey-interior.png",
     link: "https://yfeey.space",
   },
   {
     title: "Yfeey Hub",
+    desc: "Full-stack restaurant reservation & ordering system",
     image:
       "/images/resturanthub.png",
     link: "https://yfeey.online",
   },
   {
     title: "Yfeey Store",
+    desc: "Scalable e-commerce platform with AI recommendations",
     image:
       "/images/yfeey-store.png",
     link: "https://yfeey.store",
   },
   {
     title: "Seaf Legal",
+    desc: "Digital legal services platform for diaspora Nigerians",
     image:
       "/images/seaflegal.png",
     link: "https://seaflegal.com",
   },
   {
     title: "Tracmedy",
+    desc: "Patient discharge & recovery tracking system",
     image:
       "/images/tracmedy.png",
     link: "https://tracmedy.com",
@@ -65,10 +70,10 @@ const WorksGrid = () => {
                 </div>
               </div>
               <div className="py-4">
-                <h3 className="text-xl text-primary mb-4">{project.title}</h3>
-                {/* <p className="text-textMain text-sm leading-relaxed">
+                <h3 className="text-xl text-primary mb-1">{project.title}</h3>
+                <p className="text-textMain text-sm leading-relaxed">
                   {project.desc}
-                </p> */}
+                </p>
               </div>
             </Link>
           ))}
@@ -79,3 +84,4 @@ const WorksGrid = () => {
 };
 
 export default WorksGrid;
+

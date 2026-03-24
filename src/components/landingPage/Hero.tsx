@@ -37,10 +37,9 @@ const Hero = () => {
       <div className="container mx-auto max-w-8xl relative z-20 flex items-start flex-col md:flex-row gap-12 lg:gap-0">
         <div className="w-full md:w-1/2">
           <h1 ref={titleRef} className="mb-8 mt-16 max-w-4xl text-white">
-            We Love a Good Challenge.
-          </h1>
+We Love a Good Challenge.          </h1>
           <p ref={titleRef} className="text-gray-100 max-w-xl leading-relaxed mb-8 text-lg">
-            Transforming Ideas into Scalable Systems.
+           Transforming Ideas into Scalable Systems.
           </p>
 
           {/* Subtitle */}
@@ -48,7 +47,7 @@ const Hero = () => {
             ref={subtitleRef}
             className="text-gray-100 max-w-xl leading-relaxed mb-8 text-lg"
           >
-            Yfeey empowers startups, businesses, and individuals to maximize efficiency and impact through people, technology, AI, and smart automation.
+            YFEEY partners with founders and early-stage companies to build the operational and digital infrastructure that supports serious growth — through technology, automation, and strategic execution.
           </p>
 
           {/* Buttons */}
@@ -64,7 +63,7 @@ const Hero = () => {
               href="/contact#contact"
               className="w-full sm:w-auto"
             >
-              Book a Consultation
+              Book a Strategy Call
             </Button>
           </div>
         </div>

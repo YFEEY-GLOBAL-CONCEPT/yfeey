@@ -7,10 +7,11 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
+import { useGSAP } from "@gsap/react";
 
 const navItems = [
   { name: "About", href: "/about" },
-  { name: "Services", href: "/#services" },
+  { name: "Services", href: "/services" },
   { name: "Works", href: "/works" },
 ];
 
@@ -28,7 +29,7 @@ const Navbar = () => {
   }, [mobileMenuOpen]);
 
   /* ---------------- OPTIMIZED SCROLL ANIMATION ---------------- */
-  useEffect(() => {
+  useGSAP(() => {
     if (!headerRef.current) return;
 
     const header = headerRef.current;
@@ -86,7 +87,7 @@ const Navbar = () => {
       {/* ================= HEADER ================= */}
       <header
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center glass-nav will-change-transform"
+        className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center bg-deepMidnight will-change-transform"
       >
         <div className="container mx-auto px-6 md:px-10 max-w-7xl flex items-center justify-between">
           {/* Logo */}

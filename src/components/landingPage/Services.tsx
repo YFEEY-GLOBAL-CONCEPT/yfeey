@@ -15,32 +15,32 @@ import AuroraBackground from "@/components/ui/AuroraBackground";
 const services = [
   {
     title: "AI & Automation",
-    desc: "Leverage cutting-edge AI to automate content creation, lead generation, and customer service. Build custom chatbots, streamline workflows, and implement intelligent automation to transform your business operations.",
+    desc: "Intelligent systems that reduce manual overhead, accelerate decision-making, and unlock operational capacity — so your team can focus on what moves the needle.",
     icon: Bot,
   },
   {
     title: "Custom Software",
-    desc: "Full websites, mobile apps, and AI-integrated platforms from MVPs to enterprise-scale systems.",
+    desc: "Full-stack web and mobile platforms engineered for performance, security, and scale — from MVP to enterprise-grade infrastructure.",
     icon: Terminal,
   },
   {
     title: "Content & Growth",
-    desc: "AI-generated videos, faceless YouTube channels, automated social media, and content built for organic growth, lead generation, and paid advertising.",
+    desc: "Data-informed content strategies, AI-assisted production, and performance marketing designed to build authority and generate qualified demand.",
     icon: TrendingUp,
   },
   {
     title: "Team Augmentation",
-    desc: "Top-tier developers, designers, and technical specialists to augment your team and accelerate project delivery with seamless integration.",
+    desc: "Senior developers, designers, and strategists embedded directly into your workflow — no recruitment lag, no culture friction.",
     icon: UserPlus,
   },
   {
     title: "Branding",
-    desc: "Professional logo design, brand guidelines, and marketing materials to build a cohesive visual identity system for your business.",
+    desc: "Brand identity systems built for clarity and longevity — from visual identity to messaging frameworks that position you for the market you're entering.",
     icon: Palette,
   },
   {
     title: "Training",
-    desc: "Training programs, executive development, and AI workshops designed to bridge the skill gap and empower your team.",
+    desc: "Structured programmes in AI tools, digital workflows, and executive capability — equipping your team to operate at a higher level.",
     icon: GraduationCap,
   },
 ];

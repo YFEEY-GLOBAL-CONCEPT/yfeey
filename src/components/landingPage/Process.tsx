@@ -7,25 +7,25 @@ const steps = [
     num: "01",
     icon: Search,
     title: "Discovery",
-    desc: "We audit your current ecosystem to identify bottlenecks and high-value automation opportunities.",
+    desc: "We audit your business, map your constraints, and identify the highest-leverage opportunities for technology and automation.",
   },
   {
     num: "02",
     icon: DraftingCompass,
     title: "System Design",
-    desc: "Blueprint the logic framework, architecture, and tech stack required specifically for your goals.",
+    desc: "We architect the solution — defining the technical framework, tooling, and integration strategy aligned to your goals and growth stage.",
   },
   {
     num: "03",
     icon: Hammer,
     title: "Build",
-    desc: "Agile development cycles focused on robust coding standards, security, and scalability.",
+    desc: "Agile, structured development with clear milestones, quality standards, and stakeholder visibility throughout.",
   },
   {
     num: "04",
     icon: Rocket,
     title: "Launch",
-    desc: "Seamless deployment, user onboarding, and performance monitoring to ensure immediate ROI.",
+    desc: "Seamless deployment with handover documentation, team onboarding, and performance monitoring to protect your investment from day one.",
   },
 ];
 
@@ -45,8 +45,8 @@ const Process = () => {
             </span>
           </h2>
           <p className="text-text-muted mt-4 max-w-md text-lg">
-            A structured, transparent path designed to deliver predictable
-            success.
+            A structured engagement model designed for clarity, speed, and measurable
+            outcomes.
           </p>
         </div>
 

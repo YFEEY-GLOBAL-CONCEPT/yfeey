@@ -57,7 +57,7 @@ const AboutHero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative flex items-center bg-white overflow-hidden "
+      className="relative h-svh flex items-center bg-white overflow-hidden "
     >
       <AuroraBackground variant="light" />
 
@@ -68,35 +68,23 @@ const AboutHero = () => {
               ref={titleRef}
               className="text-gray-900 mb-6 text-4xl md:text-5xl lg:text-7xl"
             >
-              Building the Next <br /> Era of{" "}
+              We Build the Systems Behind{" "}
               <span className=" text-primary">
-                Digital Systems.
+                Ambitious Companies.
               </span>
             </h1>
             <p
               ref={subtitleRef}
               className="text-gray-600 max-w-xl md:mx-0 mx-auto text-lg"
             >
-              Yfeey is an architectural refinement studio. We engineer systems
-              that transform fragmented workflows into clear, scalable digital
-              infrastructure.
+              YFEEY is a technology and systems company headquartered across
+              the Isle of Man and Nigeria — partnering with founders and
+              businesses to engineer the infrastructure that serious growth
+              demands.
             </p>
           </div>
 
-          <div
-            ref={imageRef}
-            className="flex-1 relative w-full aspect-square overflow-hidden "
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1681505531034-8d67054e07f6?auto=format&fit=crop&q=80&w=1200"
-              alt="Modern architectural office interior"
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Grain Overlay on image */}
-            <div className="absolute inset-0 bg-white/5 mix-blend-overlay pointer-events-none"></div>
-          </div>
+          
         </div>
       </div>
     </section>

@@ -10,23 +10,23 @@ import {
 
 const valueItems = [
   {
-    title: "Clarity",
-    desc: "Eliminating digital noise to reveal the core purpose of every interaction and system.",
+    title: "Precision",
+    desc: "We are deliberate in everything we build. Vague briefs become clear architectures. Complex problems become elegant solutions.",
     icon: Eye,
   },
   {
-    title: "Longevity",
-    desc: "Engineering solutions designed to withstand the rapid evolution of digital trends.",
+    title: "Scalability",
+    desc: "We build for where you're going, not just where you are. Every system we design is capable of growing with your business.",
     icon: Hourglass,
   },
   {
-    title: "Structure",
-    desc: "A rigid adherence to logical systems, architectural excellence, and clean code.",
+    title: "Integrity",
+    desc: "We say what we mean, deliver what we promise, and measure our success by the measurable impact we create for our clients.",
     icon: Network,
   },
   {
     title: "Partnership",
-    desc: "Acting as a strategic extension of your team to ensure long-term structural success.",
+    desc: "We don't hand things over and disappear. We embed, collaborate, and stay accountable for outcomes — not just deliverables.",
     icon: HandshakeIcon,
   },
 ];
@@ -35,27 +35,29 @@ const AboutValues = () => {
   return (
     <section className="bg-white">
       <div className="container mx-auto">
-        <div className="max-w-3xl mb-20">
-          <h5 className="text-primary mb-4">Our Values</h5>
-          <h2 className="text-gray-900 max-w-xl">
-            Anchoring our creative output in discipline.
+        <div className="max-w-3xl mb-16">
+          <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-6">What We Stand For</p>
+          <h2 className="text-gray-900 text-4xl md:text-5xl font-display uppercase tracking-widest">
+            What We Stand For
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200">
           {valueItems.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.title}
-                className="flex flex-col gap-8 p-12 bg-primary border-l-2 border-white/10 group hover:-translate-y-2 transition-all duration-500"
+                className="flex flex-col gap-6 p-10 bg-white group hover:bg-gray-50 transition-all duration-500"
               >
-                <div className="flex items-center justify-end">
-                  <Icon className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary transition-transform duration-500 group-hover:scale-110">
+                    <Icon className="w-6 h-6" />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="text-white mb-4">{item.title}</h3>
-                  <p className="text-white/80">
+                  <h3 className="text-gray-900 text-xl font-bold mb-4 uppercase tracking-wider">{item.title}</h3>
+                  <p className="text-gray-600 text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
