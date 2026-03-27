@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, DraftingCompass, Hammer, Rocket } from "lucide-react";
+import { Search, Hammer, Rocket, MonitorCog } from "lucide-react";
 
 const steps = [
   {
@@ -11,9 +11,9 @@ const steps = [
   },
   {
     num: "02",
-    icon: DraftingCompass,
+    icon: MonitorCog,
     title: "System Design",
-    desc: "We architect the solution — defining the technical framework, tooling, and integration strategy aligned to your goals and growth stage.",
+    desc: "We architect the solution defining the technical framework, tooling, and integration strategy aligned to your goals and growth stage.",
   },
   {
     num: "03",
@@ -54,7 +54,7 @@ const Process = () => {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="process-step relative flex flex-col gap-8 p-8 lg:p-12 bg-primary"
+              className="process-step relative flex flex-col gap-8 p-4 lg:p-12 bg-primary"
             >
               <div className="flex items-center justify-between">
                 <span className="font-display text-6xl lg:text-7xl font-extrabold text-white">

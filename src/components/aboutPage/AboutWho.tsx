@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 const AboutWho = () => {
   return (
     <section className="bg-deepMidnight py-24 md:py-32 overflow-hidden border-y border-white/5">
@@ -20,14 +18,14 @@ const AboutWho = () => {
             <div className="space-y-6 text-white/70 text-lg md:text-xl leading-relaxed">
               <p>
                 YFEEY was founded on a simple but powerful observation: most
-                startups don&apos;t fail from a lack of ambition — they fail because
+                startups don&apos;t fail from a lack of ambition they fail because
                 their systems can&apos;t keep up with their vision. We exist to close
                 that gap.
               </p>
               <p>
                 We are a team of engineers, designers, strategists, and
                 operators who believe that great technology should be invisible
-                — quietly doing the work, removing friction, and compounding
+                quietly doing the work, removing friction, and compounding
                 results over time.
               </p>
               <p>

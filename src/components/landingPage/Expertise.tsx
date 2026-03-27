@@ -47,8 +47,7 @@ const Expertise = () => {
               ref={textRef}
               className="text-display-philosophy text-text-main relative z-10 mx-auto text-xl md:text-2xl lg:text-3xl leading-relaxed"
             >
-              We don&apos;t just deliver solutions — we engineer outcomes that compound over time. In a world
-              drowning in noise and inefficiency, YFEEY strips away the
+              We don&apos;t just deliver solutions we engineer outcomes that compound over time.YFEEY strips away the
               complexity. We design systems that are{" "}
               <span className="text-primary font-medium not-italic">
                 precise, scalable, and inherently logical

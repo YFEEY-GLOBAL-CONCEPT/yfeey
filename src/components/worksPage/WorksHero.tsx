@@ -30,9 +30,7 @@ const WorksHero = () => {
           Built With Intention. Designed to Perform.
         </h1>
         <p className="reveal text-textMain mt-8 max-w-2xl mx-auto text-lg md:text-xl">
-          A selected portfolio of digital products and systems delivered across
-          industries — each one a reflection of our commitment to precision,
-          scalability, and measurable impact.
+          A selection of internal products and client systems showcasing how we design, build, and deploy scalable digital infrastructure across industries
         </p>
       </div>
     </section>

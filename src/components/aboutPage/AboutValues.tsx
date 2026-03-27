@@ -37,8 +37,8 @@ const AboutValues = () => {
       <div className="container mx-auto">
         <div className="max-w-3xl mb-16">
           <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-6">What We Stand For</p>
-          <h2 className="text-gray-900 text-4xl md:text-5xl font-display uppercase tracking-widest">
-            What We Stand For
+          <h2 className="text-gray-900 text-4xl md:text-5xl uppercase">
+           The YFEEY <span className="text-primary">Way</span>
           </h2>
         </div>
 
@@ -56,8 +56,8 @@ const AboutValues = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-gray-900 text-xl font-bold mb-4 uppercase tracking-wider">{item.title}</h3>
-                  <p className="text-gray-600 text-base leading-relaxed">
+                  <h3 className="text-gray-900 text-xl font-bold mb-4 uppercase">{item.title}</h3>
+                  <p className="text-gray-600 text-base">
                     {item.desc}
                   </p>
                 </div>

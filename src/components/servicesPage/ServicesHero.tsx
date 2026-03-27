@@ -13,9 +13,7 @@ const ServicesHero = () => {
           Everything You Need <br />
           to <span className="text-primary">Scale With Confidence.</span>
         </h1>
-        <p className=" max-w-xl mx-auto">
-          Six integrated disciplines. One partner. Built to work together as a unified system for your growth.
-        </p>
+        
       </div>
     </section>
   )

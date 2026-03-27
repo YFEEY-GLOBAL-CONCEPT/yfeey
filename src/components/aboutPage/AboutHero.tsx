@@ -77,10 +77,7 @@ const AboutHero = () => {
               ref={subtitleRef}
               className="text-gray-600 max-w-xl md:mx-0 mx-auto text-lg"
             >
-              YFEEY is a technology and systems company headquartered across
-              the Isle of Man and Nigeria — partnering with founders and
-              businesses to engineer the infrastructure that serious growth
-              demands.
+              YFEEY helps founders and businesses build powerful digital infrastructure designed for growth, performance, and long term success.
             </p>
           </div>
 

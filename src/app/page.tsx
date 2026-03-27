@@ -21,7 +21,6 @@ export default function Home() {
     <main className="grow">
       <Hero />
       <Expertise />
-      <Services />
       <Process />
       {/* <Testimonials /> */}
     </main>

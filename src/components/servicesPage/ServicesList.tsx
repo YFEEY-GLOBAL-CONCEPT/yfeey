@@ -6,38 +6,38 @@ const services = [
   {
     number: "01",
     title: "AI & AUTOMATION",
-    desc: "Intelligent systems that reduce manual overhead, accelerate decision-making, and unlock operational capacity — so your team can focus on what moves the needle.",
-    details: "Custom chatbots & virtual assistants · Workflow automation · AI-generated content pipelines · Predictive analytics · Process optimization"
+    desc: "From automating daily operations to deploying AI agents that work around the clock we build systems that make your business faster, leaner, and more scalable.",
+    details: "AI agents · Workflow automation · Custom chatbots · Process optimisation "
   },
   {
     number: "02",
     title: "CUSTOM SOFTWARE",
-    desc: "Full-stack web and mobile platforms engineered for performance, security, and scale — from MVP to enterprise-grade infrastructure.",
-    details: "Web applications · Mobile apps (iOS & Android) · API development · AI-integrated platforms · Enterprise systems · MVPs"
+    desc: "From idea to launch. We build websites, apps, and MVPs that are fast, functional, and ready to scale from day one.",
+    details: "Websites · Mobile apps · MVPs · Web application, API integrations"
   },
   {
     number: "03",
     title: "CONTENT & GROWTH",
-    desc: "Data-informed content strategies, AI-assisted production, and performance marketing designed to build authority and generate qualified demand.",
-    details: "AI-generated video · Social media systems · SEO content · Paid advertising · Lead generation · Organic growth"
+    desc: "From building your online presence to driving consistent leads. we design content and growth systems that work hard for your business every day.",
+    details: "Social media · SEO content · Paid advertising · Lead generation · AI-generated video "
   },
   {
     number: "04",
     title: "TEAM AUGMENTATION",
-    desc: "Senior developers, designers, and strategists embedded directly into your workflow — no recruitment lag, no culture friction.",
-    details: "Embedded engineers · UI/UX designers · Technical PMs · QA specialists · DevOps engineers · Seamless integration"
+    desc: "Bridge global talent with your business.Access high quality African tech talent to build faster, operate efficiently, and scale with confidence.",
+    details: "Developers · AI specialists · Product & project Manager · Virtual assistants"
   },
   {
     number: "05",
     title: "BRANDING",
-    desc: "Brand identity systems built for clarity and longevity — from visual identity to messaging frameworks that position you for the market you're entering.",
-    details: "Logo & visual identity · Brand guidelines · Messaging frameworks · Marketing materials · Naming · Brand strategy"
+    desc: "From identity to positioning, we create brands that communicate clearly, stand out, and remain consistent across every touchpoint.",
+    details: "Logo & visual identity · Brand guidelines · Messaging · Naming · Brand strategy"
   },
   {
     number: "06",
     title: "TRAINING",
-    desc: "Structured programmes in AI tools, digital workflows, and executive capability — equipping your team to operate at a higher level.",
-    details: "AI literacy workshops · Executive development · Digital workflow training · Skill gap bridging · Team onboarding"
+    desc: "With a background in corporate training, we deliver programmes in AI, technology, and leadership  equipping teams to operate effectively in a modern digital environment.Delivered onsite and remotely, tailored to each organisation.",
+    details: "AI training · Technical training · Leadership development · Workflow systems"
   }
 ];
 
@@ -49,9 +49,9 @@ const ServicesList = () => {
             {services.map((service) => (
                 <div key={service.number} className="grid grid-cols-1 lg:grid-cols-3 bg-white">
                     <div className="p-12 lg:border-r border-gray-100">
-                        <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">
+                      `  {/* <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">
                             {service.number}
-                        </p>
+                        </p>` */}
                         <h2 className="text-gray-900 text-3xl font-display tracking-widest leading-none">
                             {service.title}
                         </h2>
