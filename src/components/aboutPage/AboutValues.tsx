@@ -26,7 +26,7 @@ const valueItems = [
   },
   {
     title: "Partnership",
-    desc: "We don't hand things over and disappear. We embed, collaborate, and stay accountable for outcomes — not just deliverables.",
+    desc: "We don't hand things over and disappear. We embed, collaborate, and stay accountable for outcomes not just deliverables.",
     icon: HandshakeIcon,
   },
 ];
@@ -37,7 +37,7 @@ const AboutValues = () => {
       <div className="container mx-auto">
         <div className="max-w-3xl mb-16">
           <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-6">What We Stand For</p>
-          <h2 className="text-gray-900 text-4xl md:text-5xl uppercase">
+          <h2 className="text-gray-900 text-4xl md:text-5xl">
            The YFEEY <span className="text-primary">Way</span>
           </h2>
         </div>

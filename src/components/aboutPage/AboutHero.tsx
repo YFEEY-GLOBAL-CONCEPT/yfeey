@@ -70,7 +70,7 @@ const AboutHero = () => {
             >
               We Build the Systems Behind{" "}
               <span className=" text-primary">
-                Ambitious Companies.
+                Ambitious Founders.
               </span>
             </h1>
             <p

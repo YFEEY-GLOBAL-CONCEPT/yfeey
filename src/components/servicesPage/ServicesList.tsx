@@ -60,7 +60,7 @@ const ServicesList = () => {
                         <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
                             {service.desc}
                         </p>
-                        <p className="text-gray-400 text-sm md:text-base leading-relaxed tracking-wide">
+                        <p className="text-primary text-sm md:text-base leading-relaxed tracking-wide">
                             {service.details}
                         </p>
                     </div>
