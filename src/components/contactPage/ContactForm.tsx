@@ -5,7 +5,7 @@ import { Mail, Phone, Send, MapPin } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../ui/button";
-import { sendContactEmail } from "@/app/actions/sendContactEmail";
+import { sendContactEmail } from "@/app/(client-side)/actions/sendContactEmail";
 import { contactSchema, type ContactFormData } from "@/lib/validations/contact";
 
 const ContactForm = () => {

@@ -1,9 +1,6 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Poppins, Literata } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/globalComp/Navbar";
-import Footer from "@/components/globalComp/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -73,11 +70,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${literata.variable} font-body antialiased overflow-x-hidden`}
       >
-        <Suspense>
-          <Navbar />
-        </Suspense>
         {children}
-        <Footer />
       </body>
     </html>
   );

@@ -102,6 +102,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply font-body antialiased selection:bg-primary selection:text-white min-h-screen flex flex-col relative overflow-x-hidden;
     background-color: #ffffff;

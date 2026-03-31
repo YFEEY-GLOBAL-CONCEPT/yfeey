@@ -35,23 +35,20 @@ const BlogHero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative pt-40 pb-20 bg-deep-midnight overflow-hidden"
+      className="relative pt-40 pb-20 bg-deepMidnight overflow-hidden"
     >
       <AuroraBackground className="opacity-30" />
 
       <div className="container mx-auto relative z-10 text-center">
         <h1 ref={titleRef} className="text-white max-w-4xl mx-auto mb-8">
-          Insights on the <br />
-          <span className="text-primary italic font-serif-brand">
-            Future of Automation.
-          </span>
+           Insights for the <br />
+<span className="text-primary ">Next Digital Era.</span>
         </h1>
         <p
           ref={subtitleRef}
-          className="text-gray-400 max-w-2xl mx-auto text-xl"
+          className="text-white max-w-2xl mx-auto text-xl"
         >
-          Exploring the intersection of architectural discipline, intelligent
-          systems, and the next era of digital infrastructure.
+          Deep dives into intelligent systems, startup scalability, and the architectural discipline that drives significant impact.
         </p>
       </div>
     </section>
